@@ -1,6 +1,6 @@
 ## 'Herkyles' is a project made during Software Engineering Project class - Spring 2018. 
 
-### Here is the project structure
+### Here is a project structure
 
 * All the components are in `/app/components` directory. Following the directory is a `Component.js file`, `index.js` and `styles.js` files. eg
 
@@ -13,7 +13,7 @@
 * Different pages in the app is captured in `/screens` directory. eg the following path is a Home page. 
 > /screens/Home.js
 
-* Database is configured in `/db/DbConfig.js` file. 
+* Database configuration is in `/db/DbConfig.js` file. 
 * `/app/index.js` is a file as an entry point of all components in app directory. It acts as a bridge between `app` dirctory and `App.js` file. 
 
 
