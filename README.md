@@ -2,16 +2,18 @@
 
 ### Here is the project structure
 
-* All the components are /app/components directory. Following the directory is a Component.js file, index.js and styles.js file. eg
-> app/components/ComponentName/ComponentName.js 
-> app/components/ComponentName/index.js
-> app/components/Component/style.js
+* All the components are in `/app/components` directory. Following the directory is a `Component.js file`, `index.js` and `styles.js` files. eg
+> /app/components/ComponentName/ComponentName.js 
+> /app/components/ComponentName/index.js
+> /app/components/ComponentName/styles.js
 
-* Different pages in the app is captured in /screens directory. eg the following path is a Home page. 
-> screens/Home.js
+* As you see, each component has `index` and `styles` file.
 
-* Database is configured in db/DbConfig.js file. 
-* /app/index.js is a file for entry to all components in app directory. It is also a bridge between app and App.js. 
+* Different pages in the app is captured in `/screens` directory. eg the following path is a Home page. 
+> /screens/Home.js
+
+* Database is configured in `/db/DbConfig.js` file. 
+* `/app/index.js` is a file as an entry point of all components in app directory. It acts as a bridge between `app` dirctory and `App.js` file. 
 
 
 
