@@ -9,7 +9,9 @@ EStyleSheet.build({
     $black: '#000000',
     $gold: '#FFFF00',
     $grey: '#4C4C4C', 
+    $red: '#ff0000',
 
 });
 //export default () => <Home/>;
+console.disableYellowBox = true; 
 export default () => <HerkNav/>;

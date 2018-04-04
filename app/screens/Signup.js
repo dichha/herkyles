@@ -1,22 +1,23 @@
 import React, { Component } from 'react'; 
 import { View, Text, StyleSheet } from 'react-native'; 
 
+import {Container} from '../components/Container'; 
+
 class Signup extends Component{
+    static navigationOptions = {
+        title: 'Signup', 
+        headerStyle: {
+            backgroundColor: '#000000',
+        }, 
+          headerTintColor: '#FFFF00',
+    };
     render(){
         return (
-            <View style={styles.container}>
-                <Text> Hello from Signup page! </Text>
-            </View>
+                <Container>
+                    <Text> Hello from Signup Stats! </Text>
+                </Container>            
         );
     }
 }
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-});
 
 export default Signup; 

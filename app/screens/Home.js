@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, StatusBar} from 'react-native'; 
 import { StackNavigator } from 'react-navigation'; 
  
-import {Container} from '../components/Container';
-import {LinkBtns} from '../components/Buttons/LinkBtns'; 
-import {Logo} from '../components/Logo';
-
-
+import Container from '../components/Container/Container';
+import LinkBtns from '../components/Buttons/LinkBtns/LinkBtns'; 
+import Logo from '../components/Logo/Logo';
+ 
 
 class Home extends Component{
     static navigationOptions = {
@@ -28,6 +27,7 @@ class Home extends Component{
     render(){
         return (
             <Container>
+                
                 <StatusBar transclucent={false} barStyle="light-content"/>
                 <Logo/>
                 <LinkBtns
@@ -38,7 +38,6 @@ class Home extends Component{
                     text='Login'
                     onPress={this.handleLoginPress}
                 />
-                
             </Container>
           
         );
