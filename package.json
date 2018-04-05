@@ -13,7 +13,8 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest --verbose --colors --coverage"
+    "test": "jest --verbose --colors --coverage",
+    "codacy": "cat ./coverage/lcov.info | codacy-coverage --token 154c7264ed6547aeb3e071851620cc65"
   },
   "jest": {
     "preset": "jest-expo",
@@ -30,6 +31,7 @@
     }
   },
   "dependencies": {
+    "codacy": "^1.0.1-1",
     "expo": "^26.0.0",
     "firebase": "^4.12.1",
     "react": "16.3.0-alpha.1",
