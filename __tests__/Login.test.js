@@ -3,7 +3,9 @@ import Login from './../app/screens/Login';
 
 import renderer from 'react-test-renderer';
 
-it('Login renders without crashing', () => {
-  const rendered = renderer.create(<Login />).toJSON();
-  expect(rendered).toBeTruthy();
+describe ('Login', () => {
+  it('renders without crashing', () => {
+    const rendered = renderer.create(<Login />).toJSON();
+    expect(rendered).toBeTruthy();
+  });
 });

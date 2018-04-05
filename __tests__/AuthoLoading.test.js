@@ -3,7 +3,9 @@ import AuthLoading from './../app/screens/AuthLoading';
 
 import renderer from 'react-test-renderer';
 
-it('AuthLoading renders without crashing', () => {
-  const rendered = renderer.create(<AuthLoading />).toJSON();
-  expect(rendered).toBeTruthy();
+describe ('AuthLoading', () => {
+  it('renders without crashing', () => {
+    const rendered = renderer.create(<AuthLoading />).toJSON();
+    expect(rendered).toBeTruthy();
+  });
 });
