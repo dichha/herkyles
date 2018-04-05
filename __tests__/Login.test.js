@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './../app/screens/LoginHome';
+import Login from './../app/screens/Login';
 
 import renderer from 'react-test-renderer';
 
