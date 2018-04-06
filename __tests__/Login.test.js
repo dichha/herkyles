@@ -7,5 +7,6 @@ describe ('Login', () => {
   it('renders without crashing', () => {
     const rendered = renderer.create(<Login />).toJSON();
     expect(rendered).toBeTruthy();
+    expect(rendered).toMatchSnapshot();
   });
 });

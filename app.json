@@ -1,5 +1,14 @@
 {
   "expo": {
-    "sdkVersion": "26.0.0"
+    "name": "Herkyles",
+    "icon": "./app/components/Logo/images/logo.png",
+    "version": "2.0.0",
+    "sdkVersion": "26.0.0",
+    "ios": {
+      "bundleIdentifier": "com.sep.herkyles"
+    },
+    "android": {
+      "package": "com.sep.herkyles"
+    }
   }
 }

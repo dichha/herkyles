@@ -7,5 +7,6 @@ describe ('Signup', () => {
   it('renders without crashing', () => {
     const rendered = renderer.create(<Signup />).toJSON();
     expect(rendered).toBeTruthy();
+    expect(rendered).toMatchSnapshot();
   });
 });
