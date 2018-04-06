@@ -7,5 +7,6 @@ describe ('Home', () => {
   it('renders without crashing', () => {
     const rendered = renderer.create(<Home />).toJSON();
     expect(rendered).toBeTruthy();
+    expect(rendered).toMatchSnapshot();
   });
 });

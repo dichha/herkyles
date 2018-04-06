@@ -7,5 +7,6 @@ describe ('HerkNav', () => {
   it('renders without crashing', () => {
     const rendered = renderer.create(<HerkNav />).toJSON();
     expect(rendered).toBeTruthy();
+    expect(rendered).toMatchSnapshot();
   });
 });

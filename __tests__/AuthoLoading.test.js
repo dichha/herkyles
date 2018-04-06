@@ -7,5 +7,6 @@ describe ('AuthLoading', () => {
   it('renders without crashing', () => {
     const rendered = renderer.create(<AuthLoading />).toJSON();
     expect(rendered).toBeTruthy();
+    expect(rendered).toMatchSnapshot();
   });
 });
