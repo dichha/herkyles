@@ -9,8 +9,7 @@ import t from 'tcomb-form-native';
 import EStyleSheet from 'react-native-extended-stylesheet'; 
 
 const Form = t.form.Form;
-const styles = EStyleSheet.create({
-    $grey: '$faintGrey', 
+const styles = EStyleSheet.create({ 
     container: {
         backgroundColor: '#ffffff', 
         justifyContent: 'center',
@@ -40,15 +39,16 @@ const formStyles = {
     controlLabel: {
         normal: {
         fontSize: 12,
-        color: 'styles.$grey',
+        color: '#7F7D7D',
         fontWeight: '400',
         marginBottom: 7,
         },
         // the style applied when a validation error occours
         error: {
+        color: '#7F7D7D',
         fontSize: 12,
         marginBottom: 7,
-        fontWeight: '300'
+        fontWeight: '400'
         }
     }
 }; 
