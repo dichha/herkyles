@@ -3,14 +3,14 @@ import {View,Text} from 'react-native';
 import styles from './styles';
 import PropTypes from 'prop-types'; 
 
-const ErrorStatus = ({text}) => (
+const SuccessStatus = ({text}) => (
     <View>
-        <Text style={styles.error}>{text}</Text>
+        <Text style={styles.success}>{text}</Text>
     </View>
 );
 
-ErrorStatus.propTypes = {
+SuccessStatus.propTypes = {
     text: PropTypes.string,  
 }
 
-export default ErrorStatus; 
+export default SuccessStatus; 

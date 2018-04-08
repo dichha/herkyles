@@ -1,6 +1,5 @@
 import EStyleSheet from 'react-native-extended-stylesheet'; 
 
-
 export default EStyleSheet.create({
     container:{
         alignItems: 'center',
@@ -14,9 +13,9 @@ export default EStyleSheet.create({
         fontWeight: "600", 
         color: '$gold',  
     }, 
-    button: {
+    button:{
         alignItems: 'center',
         backgroundColor: '#DDDDDD',
-        padding: 10
+        padding: 10, 
     },
 });
