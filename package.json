@@ -13,12 +13,25 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "jest --verbose --colors --coverage",
+    "codacy": "cat ./coverage/lcov.info | codacy-coverage --token f620b5e1ebb447f1b56cf6bc57bf38c1"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base)/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": -100
+      }
+    }
   },
   "dependencies": {
+    "codacy": "^1.0.1-1",
     "expo": "^26.0.0",
     "firebase": "^4.12.1",
     "react": "16.3.0-alpha.1",
