@@ -10,13 +10,7 @@ const ErrorStatus = ({text}) => (
 );
 
 ErrorStatus.propTypes = {
-<<<<<<< HEAD
     text: PropTypes.string,  
 }
-=======
-    text: PropTypes.string, 
-    
-};
->>>>>>> 415384f79fd7cadc19fdfec7f49fd31b598e83ea
 
 export default ErrorStatus; 

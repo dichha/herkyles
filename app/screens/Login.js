@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from 'react'; 
 import { View, Text, StyleSheet, AsyncStorage, Button, KeyboardAvoidingView} from 'react-native'; 
 import {firebaseApp} from '../../db/DbConfig';
@@ -11,17 +10,6 @@ import SuccessStatus from '../components/Status/SuccessStatus';
 import {LinkBtns} from '../components/Buttons/LinkBtns';
 import {LinkTouch} from '../components/Buttons/LinkTouch'; 
 
-=======
-import React, { Component } from "react"; 
-import { View, Text, StyleSheet, AsyncStorage, Button } from "react-native"; 
-import {firebaseApp} from "../../db/DbConfig";
-
-import {Container} from "../components/Container"; 
-import {TitledInput} from "../components/TitledInput"; 
-import {Spinner} from "../components/Spinner";  
-import ErrorStatus from "../components/Status/ErrorStatus"; 
-import {LinkBtns} from "../components/Buttons/LinkBtns";
->>>>>>> 415384f79fd7cadc19fdfec7f49fd31b598e83ea
 
 class Login extends Component{
     static navigationOptions = {
@@ -34,7 +22,6 @@ class Login extends Component{
     
     constructor(props){
         super(props); 
-<<<<<<< HEAD
         this.state = {email: '', password: '', error: '', loading: false, signupToLoginStatus: ''}; 
         this._getStatus(); 
     }; 
@@ -49,10 +36,6 @@ class Login extends Component{
             console.log(e);
         }
     }; 
-=======
-        this.state = {email: "", password: "", error: "", loading: false}; 
-    }
->>>>>>> 415384f79fd7cadc19fdfec7f49fd31b598e83ea
     
     _signInAsync = async (email) => {
         const userTokenValue = Math.round((Math.random()*1000));
@@ -63,7 +46,6 @@ class Login extends Component{
         let userToken = await AsyncStorage.getItem("userToken");
         console.log("userToken after setting: " + userToken);
         
-<<<<<<< HEAD
         this.props.navigation.navigate('Auth');
     }; 
     _removeSignupToLoginStatus = async () => {
@@ -74,14 +56,6 @@ class Login extends Component{
     onLoginPress = () => {
         this.setState({ error: '', loading: true, signupToLoginStatus: '' });
         {this._removeSignupToLoginStatus()}; 
-=======
-        this.props.navigation.navigate("Auth");
-    }
-
-
-    onLoginPress = () => {
-        this.setState({ error: "", loading: true });
->>>>>>> 415384f79fd7cadc19fdfec7f49fd31b598e83ea
         const { email, password } = this.state;
         firebaseApp.auth().signInWithEmailAndPassword(email, password)
             .then(() => { this.setState({ error: "", loading: false });
@@ -92,12 +66,8 @@ class Login extends Component{
             .catch((error) => {
                 //Login was not successful, give an error message
                 console.log("In error catch scope");
-<<<<<<< HEAD
                 console.log(error.code);
                 this.setState({ error: 'Authentication failed.', loading: false });
-=======
-                this.setState({ error: "Authentication failed.", loading: false });
->>>>>>> 415384f79fd7cadc19fdfec7f49fd31b598e83ea
                 
             });
     }; 
@@ -112,7 +82,6 @@ class Login extends Component{
                 text="Log in"
                 onPress={this.onLoginPress}  />;
     }
-<<<<<<< HEAD
     renderSuccessStatus = () => {
         if(this.state.signupToLoginStatus){
             return <SuccessStatus text={this.state.signupToLoginStatus}/>
@@ -122,11 +91,6 @@ class Login extends Component{
     handleSignupPress = () => {
         this.props.navigation.navigate('Signup'); 
         console.log("Sign up pressed"); 
-=======
-    handleLoginPress = () => {
-        //this.props.navigation.navigate("Login"); 
-        console.log("handle login Press"); 
->>>>>>> 415384f79fd7cadc19fdfec7f49fd31b598e83ea
     }
 
     render(){

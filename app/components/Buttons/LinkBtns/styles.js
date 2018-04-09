@@ -13,16 +13,9 @@ export default EStyleSheet.create({
         fontWeight: "600", 
         color: "$gold",  
     }, 
-<<<<<<< HEAD
     button:{
         alignItems: 'center',
         backgroundColor: '#DDDDDD',
         padding: 10, 
-=======
-    button: {
-        alignItems: "center",
-        backgroundColor: "#DDDDDD",
-        padding: 10
->>>>>>> 415384f79fd7cadc19fdfec7f49fd31b598e83ea
     },
 });
