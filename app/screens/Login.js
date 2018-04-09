@@ -74,14 +74,14 @@ class Login extends Component{
                     label="Email Address"
                     placeholder="you@domain.com"
                     value={this.state.email}
-                    onChangeText={email=>this.setState({email})}
+                    onChangeText={email =>this.setState({email})}
                     secureTextEntry={false}
                 />
                  <TitledInput
                     label="Password"
                     placeholder="********"
                     value={this.state.password}
-                    onChangeText={password=>this.setState({password})}
+                    onChangeText={password =>this.setState({password})}
                     secureTextEntry={true}
                 />
                 <ErrorStatus 
