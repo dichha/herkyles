@@ -72,11 +72,11 @@ const options = {
 
 class Signup extends Component{
     static navigationOptions = {
-        title: 'Signup', 
+        title: "Signup", 
         headerStyle: {
-            backgroundColor: '#000000',
+            backgroundColor: "#000000",
         }, 
-          headerTintColor: '#FFFF00',
+          headerTintColor: "#FFFF00",
     };
     state = {status: ''};
     _signUpAsync = async () => {
