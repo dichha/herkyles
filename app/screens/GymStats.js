@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpacity, TouchableHighlight, Navigator } from 'react-native'; 
+import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpacity, TouchableHighlight, Navigator} from 'react-native'; 
 
 import {Container} from '../components/Container';
 
@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import {firebaseApp} from '../../db/DbConfig';
+import { Picker } from 'react-native-picker-dropdown'
 
 const deviceWidth = Dimensions.get('window').width;
 
@@ -28,6 +29,7 @@ class GymStats extends Component{
 
     constructor(props) {
         super(props);
+        this.state = { language: 'js'  }
         this.state={
             gyms: "",
             images: "test",
@@ -60,15 +62,16 @@ class GymStats extends Component{
           })
         })
     }
+
     render(){
 
         var screen = [];
         for(x = 0; x < this.state.gyms.length; x++){
             testpage = "" + this.state.pages[x];
-            console.log(x)
+            //console.log(x)
             screen.push(
-                <View style={styles.container}>
-                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert.alert(testpage)}>
+                <View key = {x.toString()} style={styles.container}>
+                    <TouchableOpacity key = {x.toString()} activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert.alert(this.props.key)}>
                         <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[x]}} />
                         <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[x]}</Text>
                         <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
@@ -78,8 +81,7 @@ class GymStats extends Component{
                     </TouchableOpacity>
                 </View>
             )
-        }
-    
+        }  
 
         return (
             <Container>
@@ -118,10 +120,8 @@ const styles = StyleSheet.create({
       shadowOffset: { width: 0, height: 5 },
       shadowRadius: 10,
       shadowOpacity: 0.35,
-    },
-    title:{
-        
     }
   });
+  
 
 export default GymStats; 
