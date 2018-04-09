@@ -1,45 +1,45 @@
-import React, { Component } from 'react'; 
-import { View, Text, StyleSheet, AsyncStorage, Button } from 'react-native'; 
-import {firebaseApp} from '../../db/DbConfig';
+import React, { Component } from "react"; 
+import { View, Text, StyleSheet, AsyncStorage, Button } from "react-native"; 
+import {firebaseApp} from "../../db/DbConfig";
 
-import {Container} from '../components/Container'; 
-import {TitledInput} from '../components/TitledInput'; 
-import {Spinner} from '../components/Spinner';  
-import ErrorStatus from '../components/Status/ErrorStatus'; 
-import {LinkBtns} from '../components/Buttons/LinkBtns';
+import {Container} from "../components/Container"; 
+import {TitledInput} from "../components/TitledInput"; 
+import {Spinner} from "../components/Spinner";  
+import ErrorStatus from "../components/Status/ErrorStatus"; 
+import {LinkBtns} from "../components/Buttons/LinkBtns";
 
 class Login extends Component{
     static navigationOptions = {
-        title: 'Login', 
+        title: "Login", 
         headerStyle: {
-            backgroundColor: '#000000',
+            backgroundColor: "#000000",
         }, 
-          headerTintColor: '#FFFF00',
+          headerTintColor: "#FFFF00",
     };
     
     constructor(props){
         super(props); 
-        this.state = {email: '', password: '', error: '', loading: false}; 
+        this.state = {email: "", password: "", error: "", loading: false}; 
     }
     
     _signInAsync = async (email) => {
         const userTokenValue = Math.round((Math.random()*1000));
 
-        await AsyncStorage.setItem('userToken', userTokenValue.toString());
-        await AsyncStorage.setItem('userEmail', email);
+        await AsyncStorage.setItem("userToken", userTokenValue.toString());
+        await AsyncStorage.setItem("userEmail", email);
 
-        let userToken = await AsyncStorage.getItem('userToken');
+        let userToken = await AsyncStorage.getItem("userToken");
         console.log("userToken after setting: " + userToken);
         
-        this.props.navigation.navigate('Auth');
+        this.props.navigation.navigate("Auth");
     }
 
 
     onLoginPress = () => {
-        this.setState({ error: '', loading: true });
+        this.setState({ error: "", loading: true });
         const { email, password } = this.state;
         firebaseApp.auth().signInWithEmailAndPassword(email, password)
-            .then(() => { this.setState({ error: '', loading: false });
+            .then(() => { this.setState({ error: "", loading: false });
                 console.log("Logged in successfully");
                 this._signInAsync(email);
                        
@@ -47,7 +47,7 @@ class Login extends Component{
             .catch(() => {
                 //Login was not successful, give an error message
                 console.log("In error catch scope");
-                this.setState({ error: 'Authentication failed.', loading: false });
+                this.setState({ error: "Authentication failed.", loading: false });
                 
             });
     }
@@ -63,25 +63,25 @@ class Login extends Component{
                 onPress={this.onLoginPress}  />;
     }
     handleLoginPress = () => {
-        //this.props.navigation.navigate('Login'); 
-        console.log('handle login Press'); 
+        //this.props.navigation.navigate("Login"); 
+        console.log("handle login Press"); 
     }
 
     render(){
         return (
             <Container>
                 <TitledInput
-                    label='Email Address'
-                    placeholder='you@domain.com'
+                    label="Email Address"
+                    placeholder="you@domain.com"
                     value={this.state.email}
-                    onChangeText={email=>this.setState({email})}
+                    onChangeText={email =>this.setState({email})}
                     secureTextEntry={false}
                 />
                  <TitledInput
-                    label='Password'
-                    placeholder='********'
+                    label="Password"
+                    placeholder="********"
                     value={this.state.password}
-                    onChangeText={password=>this.setState({password})}
+                    onChangeText={password =>this.setState({password})}
                     secureTextEntry={true}
                 />
                 <ErrorStatus 

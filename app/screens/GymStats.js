@@ -1,15 +1,15 @@
-import React, { Component } from 'react'; 
-import { View, Text, StyleSheet } from 'react-native'; 
+import React, { Component } from "react"; 
+import { View, Text, StyleSheet } from "react-native"; 
 
-import {Container} from '../components/Container'; 
+import {Container} from "../components/Container"; 
 
 class GymStats extends Component{
     static navigationOptions = {
-        title: 'Gym Stats', 
+        title: "Gym Stats", 
         headerStyle: {
-            backgroundColor: '#000000',
+            backgroundColor: "#000000",
         }, 
-          headerTintColor: '#FFFF00',
+          headerTintColor: "#FFFF00",
     };
     render(){
         return (
