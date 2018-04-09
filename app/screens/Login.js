@@ -1,12 +1,15 @@
-import React, { Component } from "react"; 
-import { View, Text, StyleSheet, AsyncStorage, Button } from "react-native"; 
-import {firebaseApp} from "../../db/DbConfig";
+import React, { Component } from 'react'; 
+import { View, Text, StyleSheet, AsyncStorage, Button, KeyboardAvoidingView} from 'react-native'; 
+import {firebaseApp} from '../../db/DbConfig';
 
-import {Container} from "../components/Container"; 
-import {TitledInput} from "../components/TitledInput"; 
-import {Spinner} from "../components/Spinner";  
-import ErrorStatus from "../components/Status/ErrorStatus"; 
-import {LinkBtns} from "../components/Buttons/LinkBtns";
+import {Container} from '../components/Container'; 
+import {TitledInput} from '../components/TitledInput'; 
+import {Spinner} from '../components/Spinner';  
+import ErrorStatus from '../components/Status/ErrorStatus'; 
+import SuccessStatus from '../components/Status/SuccessStatus'; 
+import {LinkBtns} from '../components/Buttons/LinkBtns';
+import {LinkTouch} from '../components/Buttons/LinkTouch'; 
+
 
 class Login extends Component{
     static navigationOptions = {
@@ -19,8 +22,20 @@ class Login extends Component{
     
     constructor(props){
         super(props); 
-        this.state = {email: "", password: "", error: "", loading: false}; 
-    }
+        this.state = {email: '', password: '', error: '', loading: false, signupToLoginStatus: ''}; 
+        this._getStatus(); 
+    }; 
+    _getStatus = async () =>{
+        try{
+            let status = await AsyncStorage.getItem('signupToLogin');
+            console.log("status in login: " + status);
+            this.setState({signupToLoginStatus: status});
+            console.log("status from state: "+ this.state.signupToLoginStatus);
+            
+        }catch(e){
+            console.log(e);
+        }
+    }; 
     
     _signInAsync = async (email) => {
         const userTokenValue = Math.round((Math.random()*1000));
@@ -31,12 +46,16 @@ class Login extends Component{
         let userToken = await AsyncStorage.getItem("userToken");
         console.log("userToken after setting: " + userToken);
         
-        this.props.navigation.navigate("Auth");
-    }
+        this.props.navigation.navigate('Auth');
+    }; 
+    _removeSignupToLoginStatus = async () => {
+        await AsyncStorage.removeItem('signupToLogin'); 
+    }; 
 
 
     onLoginPress = () => {
-        this.setState({ error: "", loading: true });
+        this.setState({ error: '', loading: true, signupToLoginStatus: '' });
+        {this._removeSignupToLoginStatus()}; 
         const { email, password } = this.state;
         firebaseApp.auth().signInWithEmailAndPassword(email, password)
             .then(() => { this.setState({ error: "", loading: false });
@@ -44,27 +63,34 @@ class Login extends Component{
                 this._signInAsync(email);
                        
             })
-            .catch(() => {
+            .catch((error) => {
                 //Login was not successful, give an error message
                 console.log("In error catch scope");
-                this.setState({ error: "Authentication failed.", loading: false });
+                console.log(error.code);
+                this.setState({ error: 'Authentication failed.', loading: false });
                 
             });
-    }
+    }; 
     renderButtonOrSpinner(){
-        
+
         if (this.state.loading) {
-            return <Spinner />;    
-        }
+            return <Spinner />    
+        }; 
         
-        
+          
         return <LinkBtns  
                 text="Log in"
                 onPress={this.onLoginPress}  />;
     }
-    handleLoginPress = () => {
-        //this.props.navigation.navigate("Login"); 
-        console.log("handle login Press"); 
+    renderSuccessStatus = () => {
+        if(this.state.signupToLoginStatus){
+            return <SuccessStatus text={this.state.signupToLoginStatus}/>
+        }; 
+    }
+   
+    handleSignupPress = () => {
+        this.props.navigation.navigate('Signup'); 
+        console.log("Sign up pressed"); 
     }
 
     render(){
@@ -87,13 +113,14 @@ class Login extends Component{
                 <ErrorStatus 
                     text={this.state.error} 
                 />
-                
-                {this.renderButtonOrSpinner()}
-                
-             
+                     
+                {this.renderSuccessStatus()}
 
                 
-                
+                {this.renderButtonOrSpinner()}
+                <LinkTouch 
+                    text="No account? Signup" onPress={this.handleSignupPress}
+                />  
             </Container>            
         );
     }
