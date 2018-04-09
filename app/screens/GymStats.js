@@ -8,6 +8,7 @@ import { firebaseApp } from '../../db/DbConfig';
 
 var databaseRef = firebaseApp.database();
 var testArray = [];
+var headerArray = [];
 var testArray2=[];
 
 function snapshotToArray(snapshot) {
@@ -33,57 +34,30 @@ class GymStats extends Component{
     constructor(props) {
         super(props);
 
-        /*databaseRef.ref('/attendance_FitnessEast').on('value', function(snapshot) {
-            console.log(snapshotToArray(snapshot[i]));
-            testArray2.push(snapshotToArray(snapshot[i]));
-        });*/
-
-    //console.log("\n\nTest array 2\n\n " +testArray2);
-
         this.state = {
             tableHead: [],
             tableData: []
         }
         var that = this;
-        var attendanceRef = databaseRef.ref("attendance_FitnessEast");
         
-        attendanceRef.once("value").then(function(dataSnapshot) {
-            //testArray = snapshotToArray(dataSnapshot);
-            //console.log(testArray);
-            //tableData = testArray;
-            /*this.state = {
-                tableHead: ['Head1', JSON.stringify(testArray[0]), 'Head2', 'Head3'],
-                tableData: [ testArray ]
-            }*/
-            //console.log("\n\nthis.state\n\n"+this.state.tableData[0]);
-            var i = 0;
-            dataSnapshot.forEach(function(testingSnap){
-                testArray.push(testingSnap.child("0").val());
-                i++;
-            })
-            console.log(testArray);
-            this.state={
-                tableHead : ["test"],
+        databaseRef.ref('/attendance_FitnessEast').on('value', function(snapshot) {
+            //console.log(snapshotToArray(snapshot));
+            testArray.push(snapshotToArray(snapshot));
+        
+            that.setState({
+                tableHead : ["Fitness East"],
                 tableData : testArray
-            }
-            console.log(this.tableHead);
-            console.log(this.tableData);
-        })
+            })
+            //console.log("\n\nstate.tableData\n\n"+this.state.tableData);
+        });
 
-        //console.log("\n\nTest array\n\n " + tableHead);
-
-
-
-        //try to move a setstate statement into function above
-       /* this.state = {
-            tableHead: ['Head1', JSON.stringify(testArray[0]), 'Head2', 'Head3'],
-            tableData: [ testArray ]
-        }*/
+    
     }
     
     
     render(){
         const state = this.state;
+        console.log("\n\n\nthis.state in render\n\n\n"+this.state.tableData[0]);
         return (
             <View style={styles.container}>
                 <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
