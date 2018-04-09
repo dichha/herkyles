@@ -40,15 +40,12 @@ class GymStats extends Component{
 
     //console.log("\n\nTest array 2\n\n " +testArray2);
 
-
-
-        var attendanceRef = databaseRef.ref("attendance_FitnessEast");
-
         this.state = {
-            tableHead: "",
-            tableData: ""
+            tableHead: [],
+            tableData: []
         }
         var that = this;
+        var attendanceRef = databaseRef.ref("attendance_FitnessEast");
         
         attendanceRef.once("value").then(function(dataSnapshot) {
             //testArray = snapshotToArray(dataSnapshot);
@@ -61,16 +58,17 @@ class GymStats extends Component{
             //console.log("\n\nthis.state\n\n"+this.state.tableData[0]);
             var i = 0;
             dataSnapshot.forEach(function(testingSnap){
-                testArray[i] = testingSnap.child("0").val();
+                testArray.push(testingSnap.child("0").val());
                 i++;
             })
-            
+            console.log(testArray);
+            this.state={
+                tableHead : ["test"],
+                tableData : testArray
+            }
+            console.log(this.tableHead);
+            console.log(this.tableData);
         })
-        that.setState({
-            tableHead : ["test"],
-            tableData : testArray
-        })
-        console.log(testArray);
 
         //console.log("\n\nTest array\n\n " + tableHead);
 
@@ -85,12 +83,12 @@ class GymStats extends Component{
     
     
     render(){
-        //const state = this.state;
+        const state = this.state;
         return (
             <View style={styles.container}>
                 <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
-                    <Row data={this.state.tableHead} style={styles.head} textStyle={styles.text}/>
-                    <Rows data={this.state.tableData} textStyle={styles.text}/>
+                    <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
+                    <Rows data={state.tableData} textStyle={styles.text}/>
                 </Table>
             </View>                  
         );
