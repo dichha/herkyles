@@ -1,12 +1,12 @@
-import React, {Component} from 'react'; 
+import React, {Component} from "react"; 
 
-import Home from './Home';
-import Login from './Login';
-import GymStats from './GymStats'; 
-import Welcome from './Welcome';  
-import AuthLoading from './AuthLoading'; 
+import Home from "./Home";
+import Login from "./Login";
+import GymStats from "./GymStats"; 
+import Welcome from "./Welcome";  
+import AuthLoading from "./AuthLoading"; 
 
-import {StackNavigator, SwitchNavigator} from 'react-navigation'; 
+import {StackNavigator, SwitchNavigator} from "react-navigation"; 
 
 const AppStack = StackNavigator({ 
     Home: {screen: Home}, 
@@ -27,7 +27,7 @@ export default SwitchNavigator(
         Auth: AuthStack, 
     }, 
     {
-        initialRouteName: 'AuthLoading', 
+        initialRouteName: "AuthLoading", 
     }
 ); 
 /*

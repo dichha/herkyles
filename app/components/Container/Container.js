@@ -1,8 +1,8 @@
-import React from 'react'; 
-import PropTypes from 'prop-types'; 
-import {View, Keyboard, TouchableWithoutFeedback} from 'react-native'; 
+import React from "react"; 
+import PropTypes from "prop-types"; 
+import {View, Keyboard, TouchableWithoutFeedback} from "react-native"; 
 
-import styles from './styles'; 
+import styles from "./styles"; 
 
 const Container = ({children}) => (
     <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>

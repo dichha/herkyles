@@ -1,7 +1,7 @@
-import React from 'react'; 
-import {View,Text} from 'react-native'; 
-import styles from './styles';
-import PropTypes from 'prop-types'; 
+import React from "react"; 
+import {View,Text} from "react-native"; 
+import styles from "./styles";
+import PropTypes from "prop-types"; 
 
 const ErrorStatus = ({text}) => (
     <View style={styles.container}>
