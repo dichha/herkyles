@@ -5,11 +5,11 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import HerkNav from "./screens/HerkNav"; 
 
 EStyleSheet.build({
-    $white: "#FFFFFF",
-    $black: "#000000",
-    $gold: "#FFFF00",
-    $grey: "#4C4C4C", 
-    $red: "#ff0000",
+    $white: '#FFFFFF',
+    $black: '#000000',
+    $gold: '#facf33',
+    $grey: '#4C4C4C', 
+    $red: '#ff0000',
 
 });
 //export default () => <Home/>;

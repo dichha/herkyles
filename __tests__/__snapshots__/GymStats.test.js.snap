@@ -18,12 +18,54 @@ exports[`GymStats renders without crashing 1`] = `
   style={undefined}
   testID={undefined}
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <RCTScrollView
+    automaticallyAdjustContentInsets={false}
+    contentContainerStyle={undefined}
+    contentInset={
+      Object {
+        "bottom": 0,
+      }
+    }
+    enableAutoAutomaticScroll={true}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    getScrollResponder={[Function]}
+    handleOnScroll={[Function]}
+    keyboardDismissMode="interactive"
+    keyboardOpeningTime={250}
+    keyboardShouldPersistTaps="handled"
+    keyboardSpace={0}
+    onScroll={[Function]}
+    resetKeyboardSpace={[Function]}
+    resetScrollToCoords={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scrollEventThrottle={1}
+    scrollForExtraHeightOnAndroid={[Function]}
+    scrollToEnd={[Function]}
+    scrollToFocusedInput={[Function]}
+    scrollToPosition={[Function]}
+    showsVerticalScrollIndicator={true}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      }
+    }
+    viewIsInsideTabBar={false}
+    virtual={undefined}
   >
-     Hello from Gym Stats! 
-  </Text>
+    <View>
+      <RCTScrollView
+        scrollsToTop={true}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+  </RCTScrollView>
 </View>
 `;
