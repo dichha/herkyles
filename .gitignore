@@ -4,6 +4,7 @@
 coverage/lcov-report
 coverage/clover.xml
 coverage/coverage-final.json
+coverate/lcov.info
 
 # expo
 .expo/

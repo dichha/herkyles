@@ -76,7 +76,7 @@ class Signup extends Component{
         headerStyle: {
             backgroundColor: "#000000",
         }, 
-          headerTintColor: "#FFFF00",
+          headerTintColor: '#facf33',
     };
     state = {status: ''};
     _signUpAsync = async () => {
