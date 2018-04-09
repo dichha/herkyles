@@ -14,6 +14,6 @@ const LinkBtns = ({text, onPress}) => (
 LinkBtns.propTypes = {
     text: PropTypes.string, 
     onPress: PropTypes.func, 
-}
+};
 
 export default LinkBtns; 

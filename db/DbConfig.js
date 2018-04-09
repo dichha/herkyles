@@ -7,5 +7,6 @@ const firebaseConfig = {
     projectId: "herkyles-85e8e",
     storageBucket: "herkyles-85e8e.appspot.com",
     messagingSenderId: "812934741247"
-}
+};
+
 export const firebaseApp = firebase.initializeApp(firebaseConfig); 

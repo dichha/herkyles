@@ -24,6 +24,6 @@ TitledInput.propTypes = {
     value: PropTypes.string, 
     onChangeText: PropTypes.func, 
     secureTextEntry: PropTypes.bool, 
-}
+};
 
 export default TitledInput; 

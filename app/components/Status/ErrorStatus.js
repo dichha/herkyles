@@ -12,6 +12,6 @@ const ErrorStatus = ({text}) => (
 ErrorStatus.propTypes = {
     text: PropTypes.string, 
     
-}
+};
 
 export default ErrorStatus; 
