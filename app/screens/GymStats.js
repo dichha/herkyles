@@ -23,7 +23,7 @@ class GymStats extends Component{
         headerStyle: {
             backgroundColor: '#000000',
         }, 
-          headerTintColor: '#FFFF00',
+          headerTintColor: '#facf33',
     };
 
     constructor(props) {
@@ -63,19 +63,18 @@ class GymStats extends Component{
     render(){
 
         var screen = [];
-        for(i = 0; i < this.state.gyms.length; i++){
-          //console.log(weekdayHours + weekendHours)
-            testpage = "" + this.state.pages[i];
-            console.log(testpage)
+        for(x = 0; x < this.state.gyms.length; x++){
+            testpage = "" + this.state.pages[x];
+            console.log(x)
             screen.push(
                 <View style={styles.container}>
-                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert("Hello")}>
-                        <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[i]}} />
-                        <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[i]}</Text>
+                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert.alert(testpage)}>
+                        <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[x]}} />
+                        <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[x]}</Text>
                         <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[i]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[i]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[i]}</Text>
+                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[x]}</Text>
+                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[x]}</Text>
+                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[x]}</Text>
                     </TouchableOpacity>
                 </View>
             )
