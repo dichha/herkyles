@@ -19,9 +19,9 @@ var weekendHours = [];
 
 class GymStats extends Component{
     static navigationOptions = {
-        title: 'Gym Stats', 
+        title: "Gym Stats", 
         headerStyle: {
-            backgroundColor: '#000000',
+            backgroundColor: "#000000",
         }, 
           headerTintColor: '#facf33',
     };

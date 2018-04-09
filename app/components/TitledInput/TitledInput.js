@@ -1,7 +1,7 @@
-import React from 'react';
-import {TextInput, View,Text} from 'react-native';  
-import PropTypes from 'prop-types'; 
-import styles from './styles'; 
+import React from "react";
+import {TextInput, View,Text} from "react-native";  
+import PropTypes from "prop-types"; 
+import styles from "./styles"; 
 
 const TitledInput = ({label,placeholder,value, onChangeText, secureTextEntry}) => (
     <View style={styles.container}>
@@ -24,6 +24,6 @@ TitledInput.propTypes = {
     value: PropTypes.string, 
     onChangeText: PropTypes.func, 
     secureTextEntry: PropTypes.bool, 
-}
+};
 
 export default TitledInput; 

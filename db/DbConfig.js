@@ -1,4 +1,4 @@
-import * as firebase from 'firebase';
+import * as firebase from "firebase";
 
 const firebaseConfig = {
     apiKey: "AIzaSyD5Ha8fSPEBkjqMchNVy8zU6vB-WvcGYTM",
@@ -7,5 +7,6 @@ const firebaseConfig = {
     projectId: "herkyles-85e8e",
     storageBucket: "herkyles-85e8e.appspot.com",
     messagingSenderId: "812934741247"
-}
+};
+
 export const firebaseApp = firebase.initializeApp(firebaseConfig); 

@@ -1,28 +1,32 @@
-import React, { Component } from 'react'; 
-import { View, Text, StyleSheet, StatusBar} from 'react-native'; 
-import { StackNavigator } from 'react-navigation'; 
+import React, { Component } from "react"; 
+import { View, Text, StyleSheet, StatusBar} from "react-native"; 
+import { StackNavigator } from "react-navigation"; 
  
-import Container from '../components/Container/Container';
-import LinkBtns from '../components/Buttons/LinkBtns/LinkBtns'; 
-import Logo from '../components/Logo/Logo';
+import Container from "../components/Container/Container";
+import LinkBtns from "../components/Buttons/LinkBtns/LinkBtns"; 
+import Logo from "../components/Logo/Logo";
  
 
 class Home extends Component{
     static navigationOptions = {
-        title: 'Home', 
+        title: "Home", 
         headerStyle: {
-            backgroundColor: '#000000',
+            backgroundColor: "#000000",
         }, 
+<<<<<<< HEAD
           headerTintColor: '#facf33',
+=======
+          headerTintColor: "#FFFF00",
+>>>>>>> 415384f79fd7cadc19fdfec7f49fd31b598e83ea
     };
     handleGymStatsPress = () => {
-        this.props.navigation.navigate('GymStats'); 
-        console.log('handle gym stats press'); 
+        this.props.navigation.navigate("GymStats"); 
+        console.log("handle gym stats press"); 
     }
 
     handleLoginPress = () => {
-        this.props.navigation.navigate('Login'); 
-        console.log('handle login Press'); 
+        this.props.navigation.navigate("Login"); 
+        console.log("handle login Press"); 
     }
     render(){
         return (
@@ -31,11 +35,11 @@ class Home extends Component{
                 <StatusBar transclucent={false} barStyle="light-content"/>
                 <Logo/>
                 <LinkBtns
-                    text='Gym Stats'
+                    text="Gym Stats"
                     onPress={this.handleGymStatsPress}
                 />
                 <LinkBtns
-                    text='Login'
+                    text="Login"
                     onPress={this.handleLoginPress}
                 />
             </Container>
