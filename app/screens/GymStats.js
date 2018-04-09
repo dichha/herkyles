@@ -68,7 +68,7 @@ class GymStats extends Component{
             console.log(x)
             screen.push(
                 <View style={styles.container}>
-                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert.alert(testpage)}>
+                    <TouchableOpacity key={x.toString()} activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert.alert(testpage)}>
                         <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[x]}} />
                         <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[x]}</Text>
                         <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
