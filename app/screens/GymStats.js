@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpacity, TouchableHighlight, Navigator } from 'react-native'; 
-
+import { StackNavigator } from "react-navigation"; 
 import {Container} from '../components/Container';
 
 import { Ionicons } from '@expo/vector-icons';
@@ -10,6 +10,7 @@ import {firebaseApp} from '../../db/DbConfig';
 
 const deviceWidth = Dimensions.get('window').width;
 
+var gymInfo =[];
 var pageArray = []
 var nameArray = [];
 var imageArray = [];
@@ -26,6 +27,12 @@ class GymStats extends Component{
           headerTintColor: '#facf33',
     };
 
+    handleGymPress = () => {
+        this.props.navigation.navigate("DetailedGymInfo");
+        console.log("Handled pressing on Gym");
+    }
+    
+    
     constructor(props) {
         super(props);
         this.state={
@@ -41,7 +48,9 @@ class GymStats extends Component{
         
         mainRef.once("value").then(function(dataSnapshot) {
           var i = 0;
+            gymInfo=dataSnapshot;
           dataSnapshot.forEach(function(testingSnap){
+//            gymInfo.push(testingSnap);
             nameArray[i] = testingSnap.child("name").val();
             imageArray[i] = testingSnap.child("image").val();
             pageArray[i] = testingSnap.child("page").val();
@@ -60,15 +69,16 @@ class GymStats extends Component{
           })
         })
     }
+
     render(){
 
         var screen = [];
         for(x = 0; x < this.state.gyms.length; x++){
             testpage = "" + this.state.pages[x];
-            console.log(x)
+            //console.log(gymInfo);//x)
             screen.push(
                 <View style={styles.container}>
-                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert.alert(testpage)}>
+                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={this.handleGymPress}>
                         <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[x]}} />
                         <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[x]}</Text>
                         <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>

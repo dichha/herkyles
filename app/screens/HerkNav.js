@@ -2,7 +2,8 @@ import React, {Component} from "react";
 
 import Home from "./Home";
 import Login from "./Login";
-import GymStats from "./GymStats"; 
+import GymStats from "./GymStats";
+import DetailedGymInfo from "./DetailedGymInfo";
 import Welcome from "./Welcome";  
 import AuthLoading from "./AuthLoading"; 
 
@@ -12,6 +13,7 @@ const AppStack = StackNavigator({
     Home: {screen: Home}, 
     Login: {screen: Login}, 
     GymStats: {screen: GymStats},
+    DetailedGymInfo: {screen: DetailedGymInfo},
 
 }); 
 
