@@ -1,5 +1,5 @@
 import React, { Component } from "react"; 
-import { View, Text, StyleSheet, Button, AsyncStorage } from "react-native"; 
+import { View, Text, StyleSheet, Button, AsyncStorage, StatusBar} from "react-native"; 
 
 import {Container} from "../components/Container"; 
 import {firebaseApp} from "../../db/DbConfig"; 
@@ -50,6 +50,7 @@ class Welcome extends Component{
     render(){
         return (
                 <Container>
+                    <StatusBar transclucent={false} barStyle="light-content"/>
                     <Text>Welcome Admin</Text>
                 
                     <Text> Hello {this.state.userEmail}</Text>
