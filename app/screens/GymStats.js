@@ -40,12 +40,12 @@ class GymStats extends Component{
         }
         var that = this;
         
-        databaseRef.ref('/attendance_FitnessEast').on('value', function(snapshot) {
+        databaseRef.ref('/facilities/3/attendance/Locations/Cardio Room/').on('value', function(snapshot) {
             //console.log(snapshotToArray(snapshot));
             testArray.push(snapshotToArray(snapshot));
         
             that.setState({
-                tableHead : ["Fitness East"],
+                tableHead : ["Cardio Room"],
                 tableData : testArray
             })
             //console.log("\n\nstate.tableData\n\n"+this.state.tableData);
