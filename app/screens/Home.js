@@ -13,7 +13,7 @@ class Home extends Component{
         headerStyle: {
             backgroundColor: "#000000",
         }, 
-          headerTintColor: "#FFFF00",
+          headerTintColor: '#facf33',
     };
     handleGymStatsPress = () => {
         this.props.navigation.navigate("GymStats"); 
