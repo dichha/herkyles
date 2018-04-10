@@ -39,12 +39,7 @@
     "react-native": "0.54.0",
     "react-native-auto-height-image": "^1.0.0",
     "react-native-extended-stylesheet": "^0.8.1",
-<<<<<<< HEAD
-    "react-navigation": "^1.5.9",
-    "tcomb-form-native": "^0.6.11"
-=======
     "react-native-picker-dropdown": "^0.1.1",
     "react-navigation": "^1.5.9"
->>>>>>> 5e0d57a02f304dd43c5978ba3496396964a81474
   }
 }
