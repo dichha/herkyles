@@ -4,14 +4,13 @@ import styles from "./styles";
 import PropTypes from "prop-types"; 
 
 const ErrorStatus = ({text}) => (
-    <View style={styles.container}>
+    <View>
         <Text style={styles.error}>{text}</Text>
     </View>
 );
 
 ErrorStatus.propTypes = {
-    text: PropTypes.string, 
-    
-};
+    text: PropTypes.string,  
+}
 
 export default ErrorStatus; 

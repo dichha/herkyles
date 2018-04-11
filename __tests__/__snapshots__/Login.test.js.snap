@@ -60,9 +60,7 @@ exports[`Login renders without crashing 1`] = `
       value=""
     />
   </View>
-  <View
-    style={undefined}
-  >
+  <View>
     <Text
       accessible={true}
       allowFontScaling={true}
@@ -105,6 +103,42 @@ exports[`Login renders without crashing 1`] = `
         style={undefined}
       >
         Log in
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={undefined}
+      >
+        No account? Signup
       </Text>
     </View>
   </View>
