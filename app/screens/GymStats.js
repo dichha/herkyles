@@ -10,13 +10,14 @@ import {firebaseApp} from '../../db/DbConfig';
 
 const deviceWidth = Dimensions.get('window').width;
 
-var gymInfo =[];
+var gymDB ={};
 var pageArray = []
 var nameArray = [];
 var imageArray = [];
 var routeArray = [];
 var weekdayHours = [];
 var weekendHours = [];
+var s=0;
 
 class GymStats extends Component{
     static navigationOptions = {
@@ -27,12 +28,11 @@ class GymStats extends Component{
           headerTintColor: '#facf33',
     };
 
-    handleGymPress = () => {
-        this.props.navigation.navigate("DetailedGymInfo");
+    handleGymPress = (i) => {
+        this.props.navigation.navigate("DetailedGymInfo",{data:gymDB,index:i});
         console.log("Handled pressing on Gym");
     }
-    
-    
+
     constructor(props) {
         super(props);
         this.state={
@@ -48,9 +48,8 @@ class GymStats extends Component{
         
         mainRef.once("value").then(function(dataSnapshot) {
           var i = 0;
-            gymInfo=dataSnapshot;
+          gymDB=dataSnapshot;
           dataSnapshot.forEach(function(testingSnap){
-//            gymInfo.push(testingSnap);
             nameArray[i] = testingSnap.child("name").val();
             imageArray[i] = testingSnap.child("image").val();
             pageArray[i] = testingSnap.child("page").val();
@@ -72,13 +71,12 @@ class GymStats extends Component{
 
     render(){
 
-        var screen = [];
-        for(x = 0; x < this.state.gyms.length; x++){
-            testpage = "" + this.state.pages[x];
-            //console.log(gymInfo);//x)
-            screen.push(
+        var screen = [this.state.gyms.length]
+        
+        for(var x = 0; x < this.state.gyms.length; x++){
+            screen[x]=
                 <View style={styles.container}>
-                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={this.handleGymPress}>
+                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={()=>this.props.navigation.navigate("DetailedGymInfo",{data:gymDB,index:routeArray[x]})}>//this.handleGymPress(x)}>
                         <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[x]}} />
                         <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[x]}</Text>
                         <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
@@ -87,10 +85,9 @@ class GymStats extends Component{
                         <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[x]}</Text>
                     </TouchableOpacity>
                 </View>
-            )
+            
         }
     
-
         return (
             <Container>
 	            <Content>

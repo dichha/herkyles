@@ -3,6 +3,8 @@ import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpaci
 
 import {Container} from '../components/Container';
 
+//import Chart from 'react-native-chart';
+
 import { Ionicons } from '@expo/vector-icons';
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
@@ -10,13 +12,8 @@ import {firebaseApp} from '../../db/DbConfig';
 
 const deviceWidth = Dimensions.get('window').width;
 
-var gymInfo =[];
-var pageArray = []
-var nameArray = [];
-var imageArray = [];
-var routeArray = [];
-var weekdayHours = [];
-var weekendHours = [];
+
+var gymInfo=[];
 
 class DetailedGymInfo extends Component{
     static navigationOptions = {
@@ -29,72 +26,43 @@ class DetailedGymInfo extends Component{
 
     constructor(props) {
         super(props);
-        this.state={
-            gyms: "",
-            images: "test",
-            pages: "",
-            routes: "",
-            WDHours: "",
-            WEHours: "",
-        }
-        var that = this;
-        var mainRef = firebaseApp.database().ref("facilities")
-        
-        mainRef.once("value").then(function(dataSnapshot) {
-          var i = 0;
-            gymInfo=dataSnapshot;
-          dataSnapshot.forEach(function(testingSnap){
-//            gymInfo.push(testingSnap);
-            nameArray[i] = testingSnap.child("name").val();
-            imageArray[i] = testingSnap.child("image").val();
-            pageArray[i] = testingSnap.child("page").val();
-            weekdayHours[i] = testingSnap.child("hours/open/weekdays").val();
-            weekendHours[i] = testingSnap.child("hours/open/weekends").val();
-            routeArray[i] = i;
-            i++;
-          })
-          that.setState({
-            gyms : nameArray,
-            images : imageArray,
-            pages : pageArray,
-            routes : routeArray,
-            WDHours : weekdayHours,
-            WEHours : weekendHours,
-          })
-        })
     }
     render(){
-
+        
+        const { state, navigate } = this.props.navigation;
+        console.log("Index: "+state.params.index)
+        state.params.data.forEach(function(data){
+            gymInfo.push(data);
+        })
+        
         var screen = [];
-        for(x = 0; x < this.state.gyms.length; x++){
-            testpage = "" + this.state.pages[x];
-            console.log(gymInfo);//x)
-            screen.push(
-                <View style={styles.container}>
-                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert.alert(testpage)}>
-                        <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[x]}} />
-                        <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[x]}</Text>
-                    </TouchableOpacity>
-                </View>
-            )
-        }
-    
 
         return (
             <Container>
 	            <Content>
 	                <ScrollView scrollsToTop={true} ref={(ref) => this.myScroll = ref}>
-                        {screen}
+
+                        <AutoHeightImage width={deviceWidth} source={{uri:gymInfo[0].child("image").val()}} />
+
+                        <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + gymInfo[0].child("name").val()}</Text>
+
+                        <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
+
+                        <Text style={{textAlign: 'center', fontSize: 15}}>{gymInfo[0].child("hours/open/weekdays").val()}</Text>
+
+                        <Text style={{textAlign: 'center', fontSize: 15}}>{gymInfo[0].child("hours/open/weekends").val()}</Text>
+
+                        <Text style={{textAlign: 'center', fontSize: 15}}>
+                        {gymInfo[0].child("page").val()}</Text>
+
                     </ScrollView>
 	            </Content>
             </Container>            
         );
     }
 }
+
+/******************STYLING******************/
 
 const styles = StyleSheet.create({
     container: {
