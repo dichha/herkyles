@@ -72,27 +72,56 @@ class GymStats extends Component{
     render(){
 
         var screen = [this.state.gyms.length]
-        
-        for(var x = 0; x < this.state.gyms.length; x++){
-            screen[x]=
-                <View style={styles.container}>
-                    <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={()=>this.props.navigation.navigate("DetailedGymInfo",{data:gymDB,index:routeArray[x]})}>//this.handleGymPress(x)}>
-                        <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[x]}} />
-                        <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[x]}</Text>
-                    </TouchableOpacity>
-                </View>
-            
-        }
     
         return (
             <Container>
 	            <Content>
 	                <ScrollView scrollsToTop={true} ref={(ref) => this.myScroll = ref}>
-                        {screen}
+                        
+                        <View style={styles.container}>
+                            <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={()=>this.handleGymPress(0)}>
+                                <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[0]}} />
+                                <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[0]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[0]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[0]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[0]}</Text>
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={styles.container}>
+                            <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={()=>this.handleGymPress(1)}>
+                                <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[1]}} />
+                                <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[1]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[1]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[1]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[1]}</Text>
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={styles.container}>
+                            <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={()=>this.handleGymPress(2)}>
+                                <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[2]}} />
+                                <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[2]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[2]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[2]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[2]}</Text>
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={styles.container}>
+                            <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={()=>this.handleGymPress(3)}>
+                                <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[3]}} />
+                                <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[3]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[3]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[3]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[3]}</Text>
+                            </TouchableOpacity>
+                        </View>
+
                     </ScrollView>
 	            </Content>
             </Container>            
