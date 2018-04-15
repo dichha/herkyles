@@ -103,6 +103,9 @@ class DetailedGymInfo extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>
                                 {gymInfo[gymSelected].child("page").val()}</Text>
 
+                                <Text style={{textAlign: 'center', fontSize: 15}}>
+                                {gymInfo[gymSelected].child("address").val()}</Text>
+
                                 <Text style={{textAlign: 'left', fontSize: 25, textDecorationLine: 'underline'}}>{'\nWorkout Areas'}</Text>
                                 {workoutAreas}
                                 <VictoryBar data={[

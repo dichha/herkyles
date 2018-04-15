@@ -15,9 +15,9 @@ var pageArray = []
 var nameArray = [];
 var imageArray = [];
 var routeArray = [];
+var addressArray =[];
 var weekdayHours = [];
 var weekendHours = [];
-var s=0;
 
 class GymStats extends Component{
     static navigationOptions = {
@@ -40,6 +40,7 @@ class GymStats extends Component{
             images: "test",
             pages: "",
             routes: "",
+            address:"",
             WDHours: "",
             WEHours: "",
         }
@@ -53,6 +54,7 @@ class GymStats extends Component{
             nameArray[i] = testingSnap.child("name").val();
             imageArray[i] = testingSnap.child("image").val();
             pageArray[i] = testingSnap.child("page").val();
+            addressArray[i] = testingSnap.child("address").val();
             weekdayHours[i] = testingSnap.child("hours/open/weekdays").val();
             weekendHours[i] = testingSnap.child("hours/open/weekends").val();
             routeArray[i] = i;
@@ -63,6 +65,7 @@ class GymStats extends Component{
             images : imageArray,
             pages : pageArray,
             routes : routeArray,
+            address: addressArray,
             WDHours : weekdayHours,
             WEHours : weekendHours,
           })
@@ -86,6 +89,7 @@ class GymStats extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[0]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[0]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[0]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.address[0]}</Text>
                             </TouchableOpacity>
                         </View>
 
@@ -97,6 +101,7 @@ class GymStats extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[1]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[1]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[1]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.address[1]}</Text>
                             </TouchableOpacity>
                         </View>
 
@@ -108,6 +113,7 @@ class GymStats extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[2]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[2]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[2]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.address[2]}</Text>
                             </TouchableOpacity>
                         </View>
 
@@ -119,6 +125,7 @@ class GymStats extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[3]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[3]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[3]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.address[3]}</Text>
                             </TouchableOpacity>
                         </View>
 
