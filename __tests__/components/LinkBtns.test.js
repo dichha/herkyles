@@ -43,8 +43,10 @@ describe('interaction', () => {
             wrapper.find('TouchableOpacity').prop('onPress')();
         });
         it('should call the onPress callback', () => {
+            console.log(props.onPress); 
             expect(props.onPress).toHaveBeenCalledTimes(1);
         });
+
     });
 });
 

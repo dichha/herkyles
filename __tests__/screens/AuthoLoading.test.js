@@ -1,5 +1,5 @@
 import React from "react";
-import AuthLoading from "./../app/screens/AuthLoading";
+import AuthLoading from "../../app/screens/AuthLoading";
 
 import renderer from "react-test-renderer";
 

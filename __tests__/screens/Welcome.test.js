@@ -1,5 +1,5 @@
 import React from "react";
-import Welcome from "./../app/screens/Welcome";
+import Welcome from "../../app/screens/Welcome";
 
 import renderer from "react-test-renderer";
 

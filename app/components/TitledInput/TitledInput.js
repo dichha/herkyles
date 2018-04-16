@@ -5,7 +5,7 @@ import styles from "./styles";
 
 const TitledInput = ({label,placeholder,value, onChangeText, secureTextEntry}) => (
     <View style={styles.container}>
-        <Text style={styles.text}>{label.toUpperCase()}</Text>
+        <Text style={styles.text}>{label}</Text>
         <TextInput
             autoCorrect={false}
             placeholder={placeholder}

@@ -1,5 +1,5 @@
 import React from "react";
-import Signup from "./../app/screens/Signup";
+import Signup from "../../app/screens/Signup";
 
 import renderer from "react-test-renderer";
 

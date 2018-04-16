@@ -1,5 +1,5 @@
 import React from "react";
-import HerkNav from "./../app/screens/HerkNav";
+import HerkNav from "../../app/screens/HerkNav";
 
 import renderer from "react-test-renderer";
 
