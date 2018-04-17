@@ -3,7 +3,7 @@ import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpaci
 
 import {Container} from '../components/Container';
 
-//import Chart from 'react-native-chart';
+import openMap from 'react-native-open-maps';
 import { VictoryBar } from "victory-native";
 
 import { Ionicons } from '@expo/vector-icons';
@@ -17,6 +17,7 @@ var gymSelected=0;
 var gymInfo=[];
 var workoutAreaName=[];
 var workoutAreaCapacity=[];
+var coords={};
 
 class DetailedGymInfo extends Component{
     static navigationOptions = {
@@ -41,6 +42,8 @@ class DetailedGymInfo extends Component{
         state.params.data.forEach(function(data){
             gymInfo.push(data);
         })
+        
+        
         workoutAreaCapacity=[];
         workoutAreaName=[];
         if(gymSelected==0){
@@ -55,11 +58,13 @@ class DetailedGymInfo extends Component{
                 workoutAreaCapacity.push(area.child("capacity"));
             })
         }
-       
+        coords.lat=gymInfo[gymSelected].child("coords/lat").val();
+        coords.lng=gymInfo[gymSelected].child("coords/lng").val();
         that.setState({
             areaNames : workoutAreaName,
             areaCapacity : workoutAreaCapacity,
         })
+        
         
     }
 
@@ -103,7 +108,7 @@ class DetailedGymInfo extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>
                                 {gymInfo[gymSelected].child("page").val()}</Text>
 
-                                <Text style={{textAlign: 'center', fontSize: 15}}>
+                                <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=>openMap({latitude:coords.lat,longitude:coords.lng})}>
                                 {gymInfo[gymSelected].child("address").val()}</Text>
 
                                 <Text style={{textAlign: 'left', fontSize: 25, textDecorationLine: 'underline'}}>{'\nWorkout Areas'}</Text>

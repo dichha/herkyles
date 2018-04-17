@@ -40,6 +40,8 @@
     "react-native-auto-height-image": "^1.0.0",
     "react-native-chart": "^1.0.8-beta",
     "react-native-extended-stylesheet": "^0.8.1",
+    "react-native-open-map": "^1.9.1",
+    "react-native-open-maps": "^0.1.4",
     "react-native-svg": "^6.3.1",
     "react-navigation": "^1.5.9",
     "victory-native": "^0.17.4"

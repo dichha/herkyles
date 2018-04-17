@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import {firebaseApp} from '../../db/DbConfig';
+import openMap from 'react-native-open-maps';
 
 const deviceWidth = Dimensions.get('window').width;
 
@@ -18,6 +19,7 @@ var routeArray = [];
 var addressArray =[];
 var weekdayHours = [];
 var weekendHours = [];
+var coords = [];
 
 class GymStats extends Component{
     static navigationOptions = {
@@ -43,6 +45,7 @@ class GymStats extends Component{
             address:"",
             WDHours: "",
             WEHours: "",
+            coords:"",
         }
         var that = this;
         var mainRef = firebaseApp.database().ref("facilities")
@@ -57,6 +60,7 @@ class GymStats extends Component{
             addressArray[i] = testingSnap.child("address").val();
             weekdayHours[i] = testingSnap.child("hours/open/weekdays").val();
             weekendHours[i] = testingSnap.child("hours/open/weekends").val();
+            coords[i] =testingSnap.child("coords").val();
             routeArray[i] = i;
             i++;
           })
@@ -68,6 +72,7 @@ class GymStats extends Component{
             address: addressArray,
             WDHours : weekdayHours,
             WEHours : weekendHours,
+            coords : coords,
           })
         })
     }
@@ -75,7 +80,6 @@ class GymStats extends Component{
     render(){
 
         var screen = [this.state.gyms.length]
-    
         return (
             <Container>
 	            <Content>
@@ -89,7 +93,7 @@ class GymStats extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[0]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[0]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[0]}</Text>
-                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.address[0]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}} onPress={()=>openMap({ latitude: this.state.coords[0].lat, longitude: this.state.coords[0].lng })}>{this.state.address[0]}</Text>
                             </TouchableOpacity>
                         </View>
 
@@ -101,7 +105,7 @@ class GymStats extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[1]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[1]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[1]}</Text>
-                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.address[1]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}} onPress={()=>openMap({ latitude: this.state.coords[1].lat, longitude: this.state.coords[1].lng })}>{this.state.address[1]}</Text>
                             </TouchableOpacity>
                         </View>
 
@@ -113,7 +117,7 @@ class GymStats extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[2]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[2]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[2]}</Text>
-                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.address[2]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}} onPress={()=>openMap({ latitude: this.state.coords[2].lat, longitude: this.state.coords[2].lng })}>{this.state.address[2]}</Text>
                             </TouchableOpacity>
                         </View>
 
@@ -125,7 +129,7 @@ class GymStats extends Component{
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[3]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[3]}</Text>
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[3]}</Text>
-                                <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.address[3]}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}} onPress={()=>openMap({ latitude: this.state.coords[3].lat, longitude: this.state.coords[3].lng })}>{this.state.address[3]}</Text>
                             </TouchableOpacity>
                         </View>
 
