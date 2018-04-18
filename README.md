@@ -1,6 +1,6 @@
 ## 'Herkyles' is a project made during Software Engineering Project class - Spring 2018. 
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f620b5e1ebb447f1b56cf6bc57bf38c1)](https://www.codacy.com/app/dichha/herkyles?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dichha/herkyles&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/f620b5e1ebb447f1b56cf6bc57bf38c1)](https://www.codacy.com/app/dichha/herkyles?utm_source=github.com&utm_medium=referral&utm_content=dichha/herkyles&utm_campaign=Badge_Coverage)
+[![CircleCI](https://circleci.com/gh/dichha/herkyles/tree/master.svg?style=svg)](https://circleci.com/gh/dichha/herkyles/tree/master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f620b5e1ebb447f1b56cf6bc57bf38c1)](https://www.codacy.com/app/dichha/herkyles?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dichha/herkyles&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/f620b5e1ebb447f1b56cf6bc57bf38c1)](https://www.codacy.com/app/dichha/herkyles?utm_source=github.com&utm_medium=referral&utm_content=dichha/herkyles&utm_campaign=Badge_Coverage)
 
 ### Project structure
 
