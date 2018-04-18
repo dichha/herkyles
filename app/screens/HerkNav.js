@@ -5,7 +5,8 @@ import Login from './Login';
 import GymStats from './GymStats'; 
 import Welcome from './Welcome';  
 import AuthLoading from './AuthLoading'; 
-import Signup from './Signup'; 
+import Signup from './Signup';
+import QrScanner from './QrScanner';
 
 import {StackNavigator, SwitchNavigator} from "react-navigation"; 
 
@@ -13,7 +14,8 @@ const AppStack = StackNavigator({
     Home: {screen: Home}, 
     Login: {screen: Login}, 
     GymStats: {screen: GymStats},
-    Signup: {screen: Signup}, 
+    Signup: {screen: Signup},
+    QrScanner: {screen: QrScanner},
 }); 
 
 const AuthStack = StackNavigator({
