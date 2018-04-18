@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpacity, TouchableHighlight, Navigator } from 'react-native'; 
 import { StackNavigator } from "react-navigation"; 
 import {Container} from '../components/Container';
+
 import { Ionicons } from '@expo/vector-icons';
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
@@ -11,7 +12,7 @@ import GymBtns from '../components/Buttons/GymBtns/GymBtns';
 
 const deviceWidth = Dimensions.get('window').width;
 
-var pageArray = []
+var gymDB ={};
 var nameArray = [];
 var imageArray = [];
 var addressArray =[];
@@ -38,7 +39,6 @@ class GymStats extends Component{
         this.state={
             gyms: "",
             images: "test",
-            pages: "",
             address:"",
             WDHours: "",
             WEHours: "",
@@ -49,19 +49,20 @@ class GymStats extends Component{
         
         mainRef.once("value").then(function(dataSnapshot) {
           var i = 0;
+          gymDB=dataSnapshot;
           dataSnapshot.forEach(function(testingSnap){
             nameArray[i] = testingSnap.child("name").val();
             imageArray[i] = testingSnap.child("image").val();
-            pageArray[i] = testingSnap.child("page").val();
             addressArray[i] = testingSnap.child("address").val();
             weekdayHours[i] = testingSnap.child("hours/open/weekdays").val();
             weekendHours[i] = testingSnap.child("hours/open/weekends").val();
             coords[i] =testingSnap.child("coords").val();
+            i++;
+
           })
           that.setState({
             gyms : nameArray,
             images : imageArray,
-            pages : pageArray,
             address: addressArray,
             WDHours : weekdayHours,
             WEHours : weekendHours,
