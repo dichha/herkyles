@@ -17,7 +17,11 @@ var gymSelected=0;
 var gymInfo=[];
 var workoutAreaName=[];
 var workoutAreaCapacity=[];
+var workoutAreaEquipment=[];
+var equipmentName=[];
+var equipmentQty=[];
 var coords={};
+
 
 class DetailedGymInfo extends Component{
     static navigationOptions = {
@@ -34,6 +38,9 @@ class DetailedGymInfo extends Component{
         this.state={
             areaNames:"",
             areaCapacity:"",
+            areaEquipment:"",
+            areaEquipmentName:"",
+            areaEquipmentQty:"",
         }
         var that=this;
         
@@ -43,13 +50,33 @@ class DetailedGymInfo extends Component{
             gymInfo.push(data);
         })
         
-        
         workoutAreaCapacity=[];
         workoutAreaName=[];
+        workoutAreaEquipment=[];
+        equipmentName=[];
+        equipmentQty=[];
+        
+
         if(gymSelected==0){
+            var i=0;
+            var j=0;
             gymInfo[gymSelected].child("workoutArea").forEach(function(area){
+                //j=0;
                 workoutAreaName.push(area.child("name"));
                 workoutAreaCapacity.push(area.child("capacity"));
+
+                
+                gymInfo[gymSelected].child("workoutArea/"+i+"/equipment/").forEach(function(equipment){
+                    //console.log("i,j= "+i+j);
+                    equipmentName.push(equipment.child("name").val());
+                    console.log("equipmentName["+j+"]= "+equipmentName[j]);
+                    j++
+                })
+                that.setState({
+                    areaEquipmentName : equipmentName,
+                    areaEquipmentQty : equipmentQty,
+                })
+                i++;
             }) 
         }
         else{
@@ -63,6 +90,8 @@ class DetailedGymInfo extends Component{
         that.setState({
             areaNames : workoutAreaName,
             areaCapacity : workoutAreaCapacity,
+            //areaEquipmentName : equipmentName,
+            //areaEquipmentQty : equipmentQty,
         })
         
         
@@ -81,12 +110,17 @@ class DetailedGymInfo extends Component{
         var workoutAreas = [];
 
         for (var i=0;i<workoutAreaName.length;i++){
-            workoutAreas.push(
-                <View style={styles.container}>
-                    <Text style={{textAlign: 'left', fontSize: 20}}>{i+1+". "+workoutAreaName[i].val()}</Text>
-                    <Text style={{textAlign: 'left', fontSize: 20}}>{"capacity: "+workoutAreaCapacity[i].val()}</Text>
-                </View>
-            )
+            console.log("equipmentName["+i+"] in render= "+equipmentName[i]);
+           // for (var j=0; j<equipmentName[i].length;j++){
+               // console.log("\n\nequipment name in render"+equipmentName[i][j]);
+                workoutAreas.push(
+                    <View style={styles.container}>
+                        <Text style={{textAlign: 'left', fontSize: 20}}>{i+1+". "+workoutAreaName[i].val()}</Text>
+                        <Text style={{textAlign: 'left', fontSize: 20}}>{"capacity: "+workoutAreaCapacity[i].val()}</Text>
+                        <Text style={{textAlign: 'left', fontSize: 20}}>{"Equipment Name: "+equipmentName[i]}</Text>
+                    </View>
+                )
+           // }
         }
 
         return (
