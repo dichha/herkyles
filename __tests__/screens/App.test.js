@@ -1,11 +1,11 @@
 import React from "react";
-import Home from "./../app/screens/Home";
+import App from "../../App";
 
 import renderer from "react-test-renderer";
 
-describe ("Home", () => {
+describe ("App", () => {
   it("renders without crashing", () => {
-    const rendered = renderer.create(<Home />).toJSON();
+    const rendered = renderer.create(<App />).toJSON();
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });

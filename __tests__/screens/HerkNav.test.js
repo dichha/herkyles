@@ -1,11 +1,11 @@
 import React from "react";
-import AuthLoading from "./../app/screens/AuthLoading";
+import HerkNav from "../../app/screens/HerkNav";
 
 import renderer from "react-test-renderer";
 
-describe ("AuthLoading", () => {
+describe ("HerkNav", () => {
   it("renders without crashing", () => {
-    const rendered = renderer.create(<AuthLoading />).toJSON();
+    const rendered = renderer.create(<HerkNav />).toJSON();
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });
