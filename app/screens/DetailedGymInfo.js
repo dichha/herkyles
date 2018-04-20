@@ -4,7 +4,7 @@ import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpaci
 import {Container} from '../components/Container';
 
 import openMap from 'react-native-open-maps';
-import { VictoryBar } from "victory-native";
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme  } from "victory-native";
 
 import { Ionicons } from '@expo/vector-icons';
 import AutoHeightImage from 'react-native-auto-height-image';
@@ -18,6 +18,12 @@ var gymInfo=[];
 var workoutAreaName=[];
 var workoutAreaCapacity=[];
 var coords={};
+var data = [
+  {quarter: 1, earnings: 13000},
+  {quarter: 2, earnings: 16500},
+  {quarter: 3, earnings: 14250},
+  {quarter: 4, earnings: 19000}
+];
 
 class DetailedGymInfo extends Component{
     static navigationOptions = {
@@ -113,13 +119,25 @@ class DetailedGymInfo extends Component{
 
                                 <Text style={{textAlign: 'left', fontSize: 25, textDecorationLine: 'underline'}}>{'\nWorkout Areas'}</Text>
                                 {workoutAreas}
-                                <VictoryBar data={[
-                                    { x: 1, y: 2, width: 12 },
-                                    { x: 2, y: 3, width: 12 },
-                                    { x: 3, y: 5, width: 12 },
-                                    { x: 4, y: 4, width: 12 },
-                                    { x: 5, y: 6, width: 12 }
-                                  ]}/>
+                                <VictoryChart
+                                    // adding the material theme provided with Victory
+                                    theme={VictoryTheme.material}
+                                    domainPadding={20}
+                                  >
+                                    <VictoryAxis
+                                      tickValues={[1, 2, 3, 4]}
+                                      tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+                                    />
+                                    <VictoryAxis
+                                      dependentAxis
+                                      tickFormat={(x) => ('$${x / 1000}k')}
+                                    />
+                                    <VictoryBar
+                                      data={data}
+                                      x="quarter"
+                                      y="earnings"
+                                    />
+                                  </VictoryChart>
                             </TouchableOpacity>
                         </View>
                     </ScrollView>

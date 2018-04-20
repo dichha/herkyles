@@ -63,7 +63,788 @@ exports[`GymStats renders without crashing 1`] = `
       <RCTScrollView
         scrollsToTop={true}
       >
-        <View />
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "marginBottom": 20,
+                  "opacity": 1,
+                  "padding": 0,
+                  "shadowColor": "#303838",
+                  "shadowOffset": Object {
+                    "height": 5,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.35,
+                  "shadowRadius": 10,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                onError={[Function]}
+                onHeightChange={[Function]}
+                source={
+                  Object {
+                    "uri": "t",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 750,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 30,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              >
+                
+undefined
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 20,
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              >
+                
+Hours
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "color": "blue",
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "marginBottom": 20,
+                  "opacity": 1,
+                  "padding": 0,
+                  "shadowColor": "#303838",
+                  "shadowOffset": Object {
+                    "height": 5,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.35,
+                  "shadowRadius": 10,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                onError={[Function]}
+                onHeightChange={[Function]}
+                source={
+                  Object {
+                    "uri": "e",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 750,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 30,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              >
+                
+undefined
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 20,
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              >
+                
+Hours
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "color": "blue",
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "marginBottom": 20,
+                  "opacity": 1,
+                  "padding": 0,
+                  "shadowColor": "#303838",
+                  "shadowOffset": Object {
+                    "height": 5,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.35,
+                  "shadowRadius": 10,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                onError={[Function]}
+                onHeightChange={[Function]}
+                source={
+                  Object {
+                    "uri": "s",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 750,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 30,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              >
+                
+undefined
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 20,
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              >
+                
+Hours
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "color": "blue",
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "marginBottom": 20,
+                  "opacity": 1,
+                  "padding": 0,
+                  "shadowColor": "#303838",
+                  "shadowOffset": Object {
+                    "height": 5,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.35,
+                  "shadowRadius": 10,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Image
+                onError={[Function]}
+                onHeightChange={[Function]}
+                source={
+                  Object {
+                    "uri": "t",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "height": 0,
+                      "width": 750,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 30,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              >
+                
+undefined
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 20,
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              >
+                
+Hours
+              </Text>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "color": "blue",
+                      "fontSize": 15,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                uppercase={false}
+                virtual={undefined}
+              />
+            </View>
+          </View>
+        </View>
       </RCTScrollView>
     </View>
   </RCTScrollView>
