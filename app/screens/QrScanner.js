@@ -3,10 +3,12 @@ import { View, Text, AppRegistry, StyleSheet, TouchableOpacity, Linking, StatusB
 import { StackNavigator } from "react-navigation"; 
  
 import Container from "../components/Container/Container";
+//import Camera from 'react-native-camera';
+//import QRCodeScanner from 'react-native-qrcode-scanner';
 
-class QR extends Component {
+class QrScanner extends Component {
     static navigationOptions = {
-        title: "Home", 
+        title: "QR Scanner", 
         headerStyle: {
             backgroundColor: "#000000",
         }, 
@@ -16,11 +18,36 @@ class QR extends Component {
     render(){
         return (
             <Container>
-                <StatusBar transclucent={false} barStyle="light-content"/>
                 <Text style={{textAlign: 'center', fontSize: 15}}>QR Scanner</Text>
             </Container>
         );
     }
-};
 
-export default QR;
+//     onSuccess(e) {
+//         Linking
+//         .openURL(e.data)
+//         .catch(err => console.error('An error occurred', err));
+//     }
+
+//     render(){
+//         return (
+//             <QRCodeScanner
+//                 onRead={this.onSuccess.bind(this)}
+//                 topContent={
+//                     <Text style={{textAlign: 'center', fontSize: 15}}>
+//                         Scan the QR code.
+//                     </Text>
+//                 }
+//                 bottomContent={
+//                     <Text style={{textAlign: 'center', fontSize: 15}}>
+//                         OK. Got it!
+//                     </Text>
+//                 }
+//             />
+//         );
+//     }
+}
+
+export default QrScanner;
+
+// AppRegistry.registerComponent('default', () => QrScanner);
