@@ -7,6 +7,7 @@ import Welcome from './Welcome';
 import AuthLoading from './AuthLoading'; 
 import Signup from './Signup';
 import QrScanner from './QrScanner';
+import Forums from './Forums';
 
 import {StackNavigator, SwitchNavigator} from "react-navigation"; 
 
@@ -16,6 +17,7 @@ const AppStack = StackNavigator({
     GymStats: {screen: GymStats},
     Signup: {screen: Signup},
     QrScanner: {screen: QrScanner},
+    Forums: {screen: Forums},
 }); 
 
 const AuthStack = StackNavigator({

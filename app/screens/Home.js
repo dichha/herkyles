@@ -15,25 +15,30 @@ class Home extends Component{
         }, 
           headerTintColor: '#facf33',
     };
+
     handleGymStatsPress = () => {
         this.props.navigation.navigate("GymStats"); 
-        console.log("handle gym stats press"); 
+        console.log("handled gym stats press"); 
     }
 
     handleLoginPress = () => {
         this.props.navigation.navigate("Login"); 
-        console.log("handle login Press"); 
+        console.log("handled login Press"); 
     }
 
     handleQrScannerPress = () => {
         this.props.navigation.navigate("QrScanner"); 
-        console.log("handle qr scanner Press"); 
+        console.log("handled qr scanner Press"); 
+    }
+
+    handleForumsPress = () => {
+        this.props.navigation.navigate("Forums"); 
+        console.log("handled forums Press"); 
     }
 
     render(){
         return (
             <Container>
-                
                 <StatusBar transclucent={false} barStyle="light-content"/>
                 <Logo/>
                 <LinkBtns
@@ -47,6 +52,10 @@ class Home extends Component{
                 <LinkBtns
                     text="QR Scanner"
                     onPress={this.handleQrScannerPress}
+                />
+                <LinkBtns
+                    text="Forums"
+                    onPress={this.handleForumsPress}
                 />
             </Container>
         );
