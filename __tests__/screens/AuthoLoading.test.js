@@ -1,11 +1,11 @@
 import React from "react";
-import App from "./../App";
+import AuthLoading from "../../app/screens/AuthLoading";
 
 import renderer from "react-test-renderer";
 
-describe ("App", () => {
+describe ("AuthLoading", () => {
   it("renders without crashing", () => {
-    const rendered = renderer.create(<App />).toJSON();
+    const rendered = renderer.create(<AuthLoading />).toJSON();
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });

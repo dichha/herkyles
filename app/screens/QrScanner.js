@@ -16,7 +16,6 @@ class QR extends Component {
     render(){
         return (
             <Container>
-                
                 <StatusBar transclucent={false} barStyle="light-content"/>
                 <Text style={{textAlign: 'center', fontSize: 15}}>QR Scanner</Text>
             </Container>

@@ -1,5 +1,5 @@
 import React from "react";
-import GymStats from "./../app/screens/GymStats";
+import GymStats from "../../app/screens/GymStats";
 
 import renderer from "react-test-renderer";
 
