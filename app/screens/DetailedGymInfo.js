@@ -88,8 +88,7 @@ class DetailedGymInfo extends Component{
 
         coords.lat=gymInfo[gymSelected].child("coords/lat").val();
         coords.lng=gymInfo[gymSelected].child("coords/lng").val();
-        
-        
+         
     }
 
     
@@ -115,20 +114,21 @@ class DetailedGymInfo extends Component{
                 equipDisplay = temp[j];
 
                 equip.push(
-                    <Text style={{textAlign: 'left', fontSize: 20}}>{equipDisplay}</Text>
+                    <Text style={{textAlign:'left', fontSize: 20}}>{equipDisplay}</Text>
                 )
                 console.log(workoutAreaEquipmentTotal[i,j]);
             }
             console.log(workoutAreaName[i]);
-            console.log()
-                workoutAreas.push(
-                    <View style={styles.container} key={i}>
-                        <Text style={{textAlign: 'left', fontSize: 20}}>{i+1+". "+workoutAreaName[i]}</Text>
+                
+            workoutAreas.push(
+                <View style={styles.container} key={i}>
+                    <Text style={{textAlign:'left', fontSize: 25,fontWeight: 'bold'}}>{workoutAreaName[i]}</Text>
                         {equip}
-                    </View>
-                )
-                equip=[];
-           // }
+                </View>
+            )
+            
+            equip=[];
+
         }
 
         return (
@@ -152,9 +152,10 @@ class DetailedGymInfo extends Component{
 
                                 <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=>openMap({latitude:coords.lat,longitude:coords.lng})}>
                                 {gymInfo[gymSelected].child("address").val()}</Text>
-
-                                <Text style={{textAlign: 'left', fontSize: 25, textDecorationLine: 'underline'}}>{'\nWorkout Areas'}</Text>
+                                
+                                <Text style={{textAlign: 'center', fontSize: 25, textDecorationLine: 'underline'}}>{'\nWorkout Areas'}</Text>
                                 {workoutAreas}
+
                                 <VictoryBar data={[
                                     { x: 1, y: 2, width: 12 },
                                     { x: 2, y: 3, width: 12 },
