@@ -12,6 +12,38 @@ describe ("Home", () => {
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });
+  it('should call navigate on pressing login', () => {
+    //let handleLoginPressMock = jest.fn(); 
+    //let navigationMock = {navigate: jest.fn()}
+    const navigationMock = {navigate: jest.fn()}; 
+
+    let homeComponent = renderer.create(<Home 
+        navigation={navigationMock}
+      />
+    ).getInstance();
+  
+    homeComponent.handleLoginPress(); 
+    expect(navigationMock.navigate).toHaveBeenCalledTimes(1); 
+  });
+  it('should call navigate on pressing GymStats', () => {
+    const navigationMock = {navigate: jest.fn()}; 
+
+    let homeComponent = renderer.create(<Home 
+        navigation={navigationMock}
+      />
+    ).getInstance(); 
+
+    homeComponent.handleGymStatsPress(); 
+    expect(navigationMock.navigate).toHaveBeenCalledTimes(1); 
+  
+  });
+  /*
+  it("should console.log handle gym stats press", () => {
+    handleGymStatsPress = jest.fn(); 
+    handleGymStatsPress("handle gym stats press"); 
+    expect(handleGymStatsPress.mock.calls[0][0]).toBe("handle gym stats press");
+  });
+  */
   /*
   it('should navigate onPress button is pressed', () => {
    
