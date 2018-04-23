@@ -41,6 +41,7 @@ class DetailedGymInfo extends Component{
             areaEquipment:"",
             areaEquipmentName:"",
             areaEquipmentQty:"",
+            areaEquipmentTotal:"",
         }
         var that=this;
         
@@ -53,6 +54,7 @@ class DetailedGymInfo extends Component{
         workoutAreaCapacity=[];
         workoutAreaName=[];
         workoutAreaEquipment=[];
+        workoutAreaEquipmentTotal=[];
         equipmentName=[];
         equipmentQty=[];
         
@@ -60,39 +62,33 @@ class DetailedGymInfo extends Component{
         if(gymSelected==0){
             var i=0;
             var j=0;
-            gymInfo[gymSelected].child("workoutArea").forEach(function(area){
-                //j=0;
-                workoutAreaName.push(area.child("name"));
-                workoutAreaCapacity.push(area.child("capacity"));
-
-                
-                gymInfo[gymSelected].child("workoutArea/"+i+"/equipment/").forEach(function(equipment){
-                    //console.log("i,j= "+i+j);
-                    equipmentName.push(equipment.child("name").val());
-                    console.log("equipmentName["+j+"]= "+equipmentName[j]);
-                    j++
-                })
-                that.setState({
-                    areaEquipmentName : equipmentName,
-                    areaEquipmentQty : equipmentQty,
-                })
-                i++;
-            }) 
-        }
-        else{
             gymInfo[gymSelected].child("workoutAreas").forEach(function(area){
-                workoutAreaName.push(area.child("name"));
-                workoutAreaCapacity.push(area.child("capacity"));
+                workoutAreaName.push(area.child("name").val());
+                workoutAreaCapacity.push(area.child("capacity").val());
+
+                j=0;
+                area.child("equipment").forEach(function(eq){
+                    workoutAreaEquipment[j] = eq.child("name").val();
+                    j++;
+                })
+                //console.log("Here: " + workoutAreaEquipment);
+                workoutAreaEquipmentTotal[i] = workoutAreaEquipment;
+                workoutAreaEquipment=[];
+                i++;
+                //console.log(workoutAreaEquipmentTotal);
+            })
+            console.log(workoutAreaName);
+            that.setState({
+                areaNames : workoutAreaName,
+                areaCapacity : workoutAreaCapacity,
+                areaEquipmentName : equipmentName,
+                areaEquipmentQty : equipmentQty,
+                areaEquipmentTotal: workoutAreaEquipmentTotal,
+    
             })
         }
         coords.lat=gymInfo[gymSelected].child("coords/lat").val();
         coords.lng=gymInfo[gymSelected].child("coords/lng").val();
-        that.setState({
-            areaNames : workoutAreaName,
-            areaCapacity : workoutAreaCapacity,
-            //areaEquipmentName : equipmentName,
-            //areaEquipmentQty : equipmentQty,
-        })
         
         
     }
@@ -108,18 +104,31 @@ class DetailedGymInfo extends Component{
         console.log("*********************************")
         
         var workoutAreas = [];
+        var equip = [];
+        var temp = [];
+        var equipDisplay;
 
         for (var i=0;i<workoutAreaName.length;i++){
-            console.log("equipmentName["+i+"] in render= "+equipmentName[i]);
-           // for (var j=0; j<equipmentName[i].length;j++){
-               // console.log("\n\nequipment name in render"+equipmentName[i][j]);
+            temp = workoutAreaEquipmentTotal[i];
+            for(var j=0;j<temp.length;j++){
+                console.log(workoutAreaEquipmentTotal[i].length);
+                console.log("j=" + j);
+                equipDisplay = temp[j];
+
+                equip.push(
+                    <Text style={{textAlign: 'left', fontSize: 20}}>{equipDisplay}</Text>
+                )
+                console.log(workoutAreaEquipmentTotal[i,j]);
+            }
+            console.log(workoutAreaName[i]);
+            console.log()
                 workoutAreas.push(
-                    <View style={styles.container}>
-                        <Text style={{textAlign: 'left', fontSize: 20}}>{i+1+". "+workoutAreaName[i].val()}</Text>
-                        <Text style={{textAlign: 'left', fontSize: 20}}>{"capacity: "+workoutAreaCapacity[i].val()}</Text>
-                        <Text style={{textAlign: 'left', fontSize: 20}}>{"Equipment Name: "+equipmentName[i]}</Text>
+                    <View style={styles.container} key={i}>
+                        <Text style={{textAlign: 'left', fontSize: 20}}>{i+1+". "+workoutAreaName[i]}</Text>
+                        {equip}
                     </View>
                 )
+                equip=[];
            // }
         }
 
