@@ -58,35 +58,34 @@ class DetailedGymInfo extends Component{
         equipmentName=[];
         equipmentQty=[];
         
+        var i=0;
+        var j=0;
 
-        if(gymSelected==0){
-            var i=0;
-            var j=0;
-            gymInfo[gymSelected].child("workoutAreas").forEach(function(area){
-                workoutAreaName.push(area.child("name").val());
-                workoutAreaCapacity.push(area.child("capacity").val());
+        gymInfo[gymSelected].child("workoutAreas").forEach(function(area){
+            workoutAreaName.push(area.child("name").val());
+            workoutAreaCapacity.push(area.child("capacity").val());
 
-                j=0;
-                area.child("equipment").forEach(function(eq){
-                    workoutAreaEquipment[j] = eq.child("name").val();
-                    j++;
-                })
-                //console.log("Here: " + workoutAreaEquipment);
-                workoutAreaEquipmentTotal[i] = workoutAreaEquipment;
-                workoutAreaEquipment=[];
-                i++;
-                //console.log(workoutAreaEquipmentTotal);
+            j=0;
+            area.child("equipment").forEach(function(eq){
+                workoutAreaEquipment[j] = eq.child("name").val();
+                equipmentQty[j] = eq.child("quantity").val();
+                j++;
             })
-            console.log(workoutAreaName);
-            that.setState({
-                areaNames : workoutAreaName,
-                areaCapacity : workoutAreaCapacity,
-                areaEquipmentName : equipmentName,
-                areaEquipmentQty : equipmentQty,
-                areaEquipmentTotal: workoutAreaEquipmentTotal,
-    
-            })
-        }
+                    
+            workoutAreaEquipmentTotal[i] = workoutAreaEquipment;
+            workoutAreaEquipment=[];
+            i++;
+        })
+            
+        console.log(workoutAreaName);
+        that.setState({
+            areaNames : workoutAreaName,
+            areaCapacity : workoutAreaCapacity,
+            areaEquipmentName : equipmentName,
+            areaEquipmentQty : equipmentQty,
+            areaEquipmentTotal: workoutAreaEquipmentTotal,
+        })
+
         coords.lat=gymInfo[gymSelected].child("coords/lat").val();
         coords.lng=gymInfo[gymSelected].child("coords/lng").val();
         
