@@ -53,10 +53,11 @@ class DetailedGymInfo extends Component{
         
         workoutAreaCapacity=[];
         workoutAreaName=[];
-        workoutAreaEquipment=[];
-        workoutAreaEquipmentTotal=[];
+    
         equipmentName=[];
+        equipmentNameTotal=[];
         equipmentQty=[];
+        equipmentQtyTotal=[];
         
         var i=0;
         var j=0;
@@ -67,13 +68,16 @@ class DetailedGymInfo extends Component{
 
             j=0;
             area.child("equipment").forEach(function(eq){
-                workoutAreaEquipment[j] = eq.child("name").val();
+                equipmentName[j] = eq.child("name").val();
                 equipmentQty[j] = eq.child("quantity").val();
                 j++;
             })
                     
-            workoutAreaEquipmentTotal[i] = workoutAreaEquipment;
-            workoutAreaEquipment=[];
+            equipmentNameTotal[i] = equipmentName;
+            equipmentName=[];
+
+            equipmentQtyTotal[i] = equipmentQty;
+            equipmentQty=[];
             i++;
         })
             
@@ -83,7 +87,8 @@ class DetailedGymInfo extends Component{
             areaCapacity : workoutAreaCapacity,
             areaEquipmentName : equipmentName,
             areaEquipmentQty : equipmentQty,
-            areaEquipmentTotal: workoutAreaEquipmentTotal,
+            areaEquipmentNameTotal: equipmentNameTotal,
+            areaEquipmentQtyTotal: equipmentQtyTotal,
         })
 
         coords.lat=gymInfo[gymSelected].child("coords/lat").val();
@@ -94,31 +99,28 @@ class DetailedGymInfo extends Component{
     
     render(){
         
-//        const { state, navigate } = this.props.navigation;
-//        console.log("Index: "+state.params.index)
-//        state.params.data.forEach(function(data){
-//            gymInfo.push(data);
-//        })
         console.log("*********************************")
         
         var workoutAreas = [];
         var equip = [];
         var temp = [];
+        var temp2 = [];
         var equipDisplay;
+        var equipDisplay2;
 
         for (var i=0;i<workoutAreaName.length;i++){
-            temp = workoutAreaEquipmentTotal[i];
+
+            temp = equipmentNameTotal[i];
+            temp2 = equipmentQtyTotal[i];
+
             for(var j=0;j<temp.length;j++){
-                console.log(workoutAreaEquipmentTotal[i].length);
-                console.log("j=" + j);
                 equipDisplay = temp[j];
+                equipDisplay2 = temp2[j];
 
                 equip.push(
-                    <Text style={{textAlign:'left', fontSize: 20}}>{equipDisplay}</Text>
+                    <Text style={{textAlign:'left', fontSize: 20}}>{equipDisplay} ({equipDisplay2})</Text>
                 )
-                console.log(workoutAreaEquipmentTotal[i,j]);
             }
-            console.log(workoutAreaName[i]);
                 
             workoutAreas.push(
                 <View style={styles.container} key={i}>
