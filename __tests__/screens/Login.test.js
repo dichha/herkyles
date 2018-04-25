@@ -15,7 +15,7 @@ describe ("Login", () => {
     //let navigationMock = {navigate: jest.fn()}
     const navigationMock = {navigate: jest.fn()}; 
 
-    let loginComponent = renderer.create(<Home 
+    let loginComponent = renderer.create(<Login 
         navigation={navigationMock}
       />
     ).getInstance();
