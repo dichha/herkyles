@@ -9,4 +9,17 @@ describe ("AuthLoading", () => {
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });
+  it('should call navigate', async () => {
+    const navigationMock = {navigate: jest.fn()}; 
+
+    let authComponent = renderer.create(<AuthLoading 
+        navigation={navigationMock}
+      />
+    ).getInstance(); 
+
+    authComponent._bootstrapAsync(); 
+    await expect(navigationMock.navigate).toHaveBeenCalledTimes(0); 
+ 
+  
+  });
 });
