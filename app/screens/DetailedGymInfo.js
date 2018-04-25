@@ -121,14 +121,29 @@ class DetailedGymInfo extends Component{
                     <Text style={{textAlign:'left', fontSize: 20}}>{equipDisplay} ({equipDisplay2})</Text>
                 )
             }
-                
+            //empty view to add horizontal line
             workoutAreas.push(
+                <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
+            )
+
+            workoutAreas.push( 
                 <View style={styles.container} key={i}>
-                    <Text style={{textAlign:'left', fontSize: 25,fontWeight: 'bold'}}>{workoutAreaName[i]}</Text>
-                        {equip}
+                    <Text style={{textAlign:'center', fontSize: 25,fontWeight: 'bold',textDecorationLine: 'underline'}}>{workoutAreaName[i]}</Text>
+                    {equip}
                 </View>
             )
             
+            workoutAreas.push(
+
+                <VictoryBar data={[
+                    { x: 1, y: 2, width: 12 },
+                    { x: 2, y: 3, width: 12 },
+                    { x: 3, y: 5, width: 12 },
+                    { x: 4, y: 4, width: 12 },
+                    { x: 5, y: 6, width: 12 }
+                  ]}/>
+            )
+    
             equip=[];
 
         }
@@ -153,18 +168,13 @@ class DetailedGymInfo extends Component{
                                 {gymInfo[gymSelected].child("page").val()}</Text>
 
                                 <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=>openMap({latitude:coords.lat,longitude:coords.lng})}>
-                                {gymInfo[gymSelected].child("address").val()}</Text>
-                                
-                                <Text style={{textAlign: 'center', fontSize: 25, textDecorationLine: 'underline'}}>{'\nWorkout Areas'}</Text>
+                                {gymInfo[gymSelected].child("address").val() + '\n'}</Text>
+                               
+                                <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
+
+                                <Text style={{textAlign: 'center', fontSize: 30,fontWeight:'bold'}}>{'Workout Areas'}</Text>
                                 {workoutAreas}
 
-                                <VictoryBar data={[
-                                    { x: 1, y: 2, width: 12 },
-                                    { x: 2, y: 3, width: 12 },
-                                    { x: 3, y: 5, width: 12 },
-                                    { x: 4, y: 4, width: 12 },
-                                    { x: 5, y: 6, width: 12 }
-                                  ]}/>
                             </TouchableOpacity>
                         </View>
                     </ScrollView>
