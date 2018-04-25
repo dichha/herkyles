@@ -118,7 +118,7 @@ class DetailedGymInfo extends Component{
                 equipDisplay2 = temp2[j];
 
                 equip.push(
-                    <Text style={{textAlign:'left', fontSize: 20}}>{equipDisplay} ({equipDisplay2})</Text>
+                    <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
                 )
             }
             //empty view to add horizontal line
@@ -127,8 +127,8 @@ class DetailedGymInfo extends Component{
             )
 
             workoutAreas.push( 
-                <View style={styles.container} key={i}>
-                    <Text style={{textAlign:'center', fontSize: 25,fontWeight: 'bold',textDecorationLine: 'underline'}}>{workoutAreaName[i]}</Text>
+                <View style={styles.listContainer} key={i}>
+                    <Text style={{textAlign:'left', fontSize: 25, marginLeft: 30, fontWeight: 'bold',textDecorationLine: 'underline'}}>{'\n' + workoutAreaName[i] + '\n'}</Text>
                     {equip}
                 </View>
             )
