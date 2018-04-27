@@ -3,7 +3,7 @@ import { View, Text, AppRegistry, StyleSheet, TouchableOpacity, Linking, StatusB
 import { StackNavigator } from "react-navigation"; 
  
 import Container from "../components/Container/Container";
-//import Camera from 'react-native-camera';
+//import RNCamera from 'react-native-camera';
 //import QRCodeScanner from 'react-native-qrcode-scanner';
 
 class QrScanner extends Component {
