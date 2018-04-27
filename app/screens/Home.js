@@ -15,9 +15,10 @@ class Home extends Component{
         }, 
           headerTintColor: '#facf33',
     };
+
     handleGymStatsPress = () => {
         this.props.navigation.navigate("GymStats"); 
-        console.log("handle gym stats press"); 
+        console.log("handled gym stats press"); 
     }
 
     handleLoginPress = () => {
@@ -32,13 +33,12 @@ class Home extends Component{
 
     handleForumsPress = () => {
         this.props.navigation.navigate("Forums"); 
-        console.log("handle forums press"); 
+        console.log("handled forums press"); 
     }
 
     render(){
         return (
             <Container>
-                
                 <StatusBar transclucent={false} barStyle="light-content"/>
                 <Logo/>
                 <LinkBtns
