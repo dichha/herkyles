@@ -22,12 +22,17 @@ class Home extends Component{
 
     handleLoginPress = () => {
         this.props.navigation.navigate("Login"); 
-        console.log("handle login Press"); 
+        console.log("handle login press"); 
     }
 
     handleQrScannerPress = () => {
         this.props.navigation.navigate("QrScanner"); 
-        console.log("handle qr scanner Press"); 
+        console.log("handle qr scanner press"); 
+    }
+
+    handleForumsPress = () => {
+        this.props.navigation.navigate("Forums"); 
+        console.log("handle forums press"); 
     }
 
     render(){
@@ -47,6 +52,10 @@ class Home extends Component{
                 <LinkBtns
                     text="QR Scanner"
                     onPress={this.handleQrScannerPress}
+                />
+                <LinkBtns
+                    text="Forums"
+                    onPress={this.handleForumsPress}
                 />
             </Container>
         );
