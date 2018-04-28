@@ -1,17 +1,14 @@
 import React, {Component} from 'react'; 
-import {ScrollView,StatusBar, Platform, ListView, View} from 'react-native'; 
+import {ScrollView,StatusBar, ListView, View} from 'react-native'; 
 import ListItem from '../components/ListItem';
 
 import {firebaseApp} from '../../db/DbConfig'; 
 
-import {Ionicons} from '@expo/vector-icons'; 
 import PropTypes from 'prop-types';
 
 import EStyleSheet from 'react-native-extended-stylesheet'; 
-import { KeyboardAwareListView } from 'react-native-keyboard-aware-scroll-view';
-const ICON_PREFIX = Platform.OS === 'ios'? 'ios': 'md'; 
-const ICON_COLOR = '#868686'; 
-const ICON_SIZE = 23; 
+
+ 
 
 const db = firebaseApp.database();
 
@@ -38,7 +35,7 @@ class RecOptions extends Component{
     }
     listenForItem = (mainRef) => {
 
-        mainRef.once("value").then((dataSnapShot) => {
+        mainRef.on("value", (dataSnapShot) => {
             var items = [];
             dataSnapShot.forEach((testingSnap) =>{
                 //console.log(testingSnap.child("name").val());

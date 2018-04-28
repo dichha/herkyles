@@ -1,7 +1,7 @@
 import React, { Component } from "react"; 
 import { View, Text, StyleSheet, StatusBar} from "react-native"; 
 import { StackNavigator } from "react-navigation"; 
- 
+
 import Container from "../components/Container/Container";
 import LinkBtns from "../components/Buttons/LinkBtns/LinkBtns"; 
 import Logo from "../components/Logo/Logo";
@@ -25,9 +25,9 @@ class Home extends Component{
         console.log("handle login Press"); 
     }
 
-    handleQrScannerPress = () => {
-        this.props.navigation.navigate("QrScanner"); 
-        console.log("handle qr scanner Press"); 
+    handleRecOptionPress = () => {
+        this.props.navigation.navigate("RecOptions"); 
+        console.log("RecOption Press"); 
     }
 
     render(){
@@ -44,10 +44,12 @@ class Home extends Component{
                     text="Login"
                     onPress={this.handleLoginPress}
                 />
+               
                 <LinkBtns
-                    text="QR Scanner"
-                    onPress={this.handleQrScannerPress}
+                    text="Manage Equipments"
+                    onPress={this.handleRecOptionPress}
                 />
+                
             </Container>
         );
     }
