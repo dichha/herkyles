@@ -8,7 +8,8 @@ import AuthLoading from './AuthLoading';
 import Signup from './Signup';
 import RecOptions from './RecOptions';
 import RecAreas from './RecAreas';
-import AreaEquip from './AreaEquip'; 
+import AreaEquip from './AreaEquip';
+import EquipEntry from './EquipEntry'; 
 
 import {StackNavigator, SwitchNavigator} from "react-navigation"; 
 
@@ -17,13 +18,15 @@ const AppStack = StackNavigator({
     Login: {screen: Login}, 
     GymStats: {screen: GymStats},
     Signup: {screen: Signup},
-    RecOptions: {screen: RecOptions},
-    RecAreas: {screen: RecAreas},
-    AreaEquip: {screen: AreaEquip},
+   
 }); 
 
 const AuthStack = StackNavigator({
-    Welcome: {screen: Welcome}
+    Welcome: {screen: Welcome},
+    RecOptions: {screen: RecOptions},
+    RecAreas: {screen: RecAreas},
+    AreaEquip: {screen: AreaEquip},
+    EquipEntry: {screen: EquipEntry}
 });  
 // wrapping AppStack & AuthStack in SwitchNavigator so that when a user logs in they aren't shown previously logged in fill-in-page in navigation. 
 

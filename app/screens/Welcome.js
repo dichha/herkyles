@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Button, AsyncStorage, StatusBar} from "react-na
 import {Container} from "../components/Container"; 
 import {firebaseApp} from "../../db/DbConfig"; 
 import {LinkBtns} from "../components/Buttons/LinkBtns"; 
+import {LinkTouch} from '../components/Buttons/LinkTouch';
 
 class Welcome extends Component{
     static navigationOptions = {
@@ -19,6 +20,11 @@ class Welcome extends Component{
         this.state = { userEmail: ""};
         this._getUserEmail();
     }
+    handleRecOptionPress = () => {
+        this.props.navigation.navigate("RecOptions"); 
+        console.log("RecOption Press"); 
+    }
+
     _getUserEmail = async () => {
         try{
             let email = await AsyncStorage.getItem("userEmail");
@@ -55,8 +61,11 @@ class Welcome extends Component{
                 
                     <Text> Hello {this.state.userEmail}</Text>
                     {console.log("userEmail in render: " + this.state.userEmail)}
-
-                    <LinkBtns 
+                    <LinkBtns
+                    text="Manage Equipments"
+                    onPress={this.handleRecOptionPress}
+                    />
+                    <LinkTouch 
                     text="Logout"
                     onPress={this.handleLogout} />
                 </Container>            
