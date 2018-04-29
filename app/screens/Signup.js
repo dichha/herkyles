@@ -24,7 +24,6 @@ const styles = EStyleSheet.create({
 }); 
 const User = t.struct({
     email: t.String, 
-    username: t.maybe(t.String), 
     password: t.String, 
     terms: t.Boolean, 
 }); 

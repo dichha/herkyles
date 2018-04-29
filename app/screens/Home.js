@@ -25,11 +25,6 @@ class Home extends Component{
         console.log("handle login Press"); 
     }
 
-    handleRecOptionPress = () => {
-        this.props.navigation.navigate("RecOptions"); 
-        console.log("RecOption Press"); 
-    }
-
     render(){
         return (
             <Container>
@@ -45,10 +40,7 @@ class Home extends Component{
                     onPress={this.handleLoginPress}
                 />
                
-                <LinkBtns
-                    text="Manage Equipments"
-                    onPress={this.handleRecOptionPress}
-                />
+              
                 
             </Container>
         );
