@@ -126,12 +126,23 @@ class DetailedGymInfo extends Component{
                 )
             }
 
+            workoutAreas.push(
+                <Text style={{textAlign: 'center', fontSize: 15, color:'red', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("closures").val())}}>
+                {'Link: Closures'}</Text>
+            )
+
             if (gymSelected == 0){
                 workoutAreas.push(
-                    <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=> {Linking.openURL(gymInfo[0].child("daySchedule").val())}}>
-                    {'Link: Area Schedules'}</Text>
+                    <Text style={{textAlign: 'center', fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("daySchedule").val())}}>
+                    {'Link: Schedule'}</Text>
                 )
+            }
             
+            if (gymSelected == 0 || gymSelected == 1){
+                workoutAreas.push(
+                    <Text style={{textAlign: 'center', fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("rules").val())}}>
+                    {'Link: Rules \n'}</Text>
+                )              
             }
 
             //empty view to add horizontal line
