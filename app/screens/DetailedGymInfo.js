@@ -103,6 +103,7 @@ class DetailedGymInfo extends Component{
         
         console.log("*********************************")
         
+        var scheduleLink = "";
         var workoutAreas = [];
         var equip = [];
         var temp = [];
@@ -124,6 +125,15 @@ class DetailedGymInfo extends Component{
                     <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
                 )
             }
+
+            if (gymSelected == 0){
+                workoutAreas.push(
+                    <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=> {Linking.openURL(gymInfo[0].child("daySchedule").val())}}>
+                    {'Link: Area Schedules'}</Text>
+                )
+            
+            }
+
             //empty view to add horizontal line
             workoutAreas.push(
                 <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
@@ -173,9 +183,6 @@ class DetailedGymInfo extends Component{
                                 <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
 
                                 <Text style={{textAlign: 'center', fontSize: 30,fontWeight:'bold'}}>{'Workout Areas'}</Text>
-                                
-                                <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("daySchedule").val())}}>
-                                {'Link: Area Schedules'}</Text>
                                 
                                 {workoutAreas}
 
