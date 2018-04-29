@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpacity, TouchableHighlight, Navigator } from 'react-native'; 
+import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpacity, TouchableHighlight, Navigator, Linking } from 'react-native'; 
 
 import {Container} from '../components/Container';
 
@@ -38,6 +38,7 @@ class DetailedGymInfo extends Component{
         this.state={
             areaNames:"",
             areaCapacity:"",
+            areaSchedule:"",
             areaEquipment:"",
             areaEquipmentName:"",
             areaEquipmentQty:"",
@@ -50,6 +51,7 @@ class DetailedGymInfo extends Component{
         state.params.data.forEach(function(data){
             gymInfo.push(data);
         })
+
         
         workoutAreaCapacity=[];
         workoutAreaName=[];
@@ -113,6 +115,7 @@ class DetailedGymInfo extends Component{
             temp = equipmentNameTotal[i];
             temp2 = equipmentQtyTotal[i];
 
+
             for(var j=0;j<temp.length;j++){
                 equipDisplay = temp[j];
                 equipDisplay2 = temp2[j];
@@ -164,15 +167,16 @@ class DetailedGymInfo extends Component{
 
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{gymInfo[gymSelected].child("hours/open/weekends").val()}</Text>
 
-                                <Text style={{textAlign: 'center', fontSize: 15}}>
-                                {gymInfo[gymSelected].child("page").val()}</Text>
-
                                 <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=>openMap({latitude:coords.lat,longitude:coords.lng})}>
                                 {gymInfo[gymSelected].child("address").val() + '\n'}</Text>
                                
                                 <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
 
                                 <Text style={{textAlign: 'center', fontSize: 30,fontWeight:'bold'}}>{'Workout Areas'}</Text>
+                                
+                                <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("daySchedule").val())}}>
+                                {'Link: Area Schedules'}</Text>
+                                
                                 {workoutAreas}
 
                             </TouchableOpacity>
