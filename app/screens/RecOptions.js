@@ -46,10 +46,11 @@ class RecOptions extends Component{
                 });
               
             });
-            
+            /*
             items.forEach((item) => {
                 console.log(item);
             });
+            */
             //console.log(gymList + " this"); 
             
             this.setState({ 
@@ -72,12 +73,14 @@ class RecOptions extends Component{
             <ListItem item={item} onPress={onPress} onLongPress={onLongPress}/>
         );
     }
+    /*
     printGyms = (item) => {
         console.log("In printGym()");
         console.log(item)
     }
+    */
    render(){
-       this.printGyms(this.state.dataSource);
+       //this.printGyms(this.state.dataSource);
        return(
            <View style={styles.container}>
                <ListView
