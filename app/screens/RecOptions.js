@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {ScrollView,StatusBar, ListView, View} from 'react-native'; 
-import ListItem from '../components/ListItem';
+import {ListItem} from '../components/List';
 
 import {firebaseApp} from '../../db/DbConfig'; 
 
