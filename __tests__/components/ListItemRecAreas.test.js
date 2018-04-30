@@ -3,7 +3,7 @@ import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'; 
 Enzyme.configure({adapter: new Adapter()}); 
 
-import {ListItem} from '../../app/components/List'; 
+import {ListItemRecAreas} from '../../app/components/List'; 
 
 import styles from '../../app/components/List/styles';
 
@@ -19,7 +19,7 @@ describe('rendering', () => {
             
            
         }
-        wrapper = shallow(<ListItem {...props} />); 
+        wrapper = shallow(<ListItemRecAreas {...props} />); 
 
     });
     it('should render a <TouchableHighlight/>', () => {
@@ -37,7 +37,7 @@ describe('rendering', () => {
 import renderer from 'react-test-renderer';
 it('renders correctly', () => {
     const hello = renderer.create(
-        <ListItem/>
+        <ListItemRecAreas/>
     ); 
 }); 
 */
