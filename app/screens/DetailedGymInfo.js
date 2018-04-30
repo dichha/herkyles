@@ -136,15 +136,25 @@ class DetailedGymInfo extends Component{
             temp = equipmentNameTotal[i];
             temp2 = equipmentQtyTotal[i];
 
+            equip.push(
+                <Text style={{textAlign:'left', fontSize: 25, marginLeft: 30,textDecorationLine: 'underline'}}>{'Equipment:'}</Text>                
+            )
 
-            for(var j=0;j<temp.length;j++){
-                equipDisplay = temp[j];
-                equipDisplay2 = temp2[j];
-
+            if (temp[0] === undefined){
                 equip.push(
-                    <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
+                    <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{"\u2022 No Equipment Data Available\n"}</Text>
                 )
+            }else{
+                for(var j=0;j<temp.length;j++){
+                    equipDisplay = temp[j];
+                    equipDisplay2 = temp2[j];
+    
+                    equip.push(
+                        <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
+                    )
+                }
             }
+
 
             //empty view to add horizontal line
             workoutAreas.push(
@@ -153,18 +163,20 @@ class DetailedGymInfo extends Component{
 
             workoutAreas.push( 
                 <View style={styles.listContainer} key={i}>
-                    <Text style={{textAlign:'left', fontSize: 25, marginLeft: 30, fontWeight: 'bold',textDecorationLine: 'underline'}}>{'\n' + workoutAreaName[i] + '\n'}</Text>
+                    <Text style={{textAlign:'left', fontSize: 25, marginLeft: 30, fontWeight: 'bold'}}>{'\n' + workoutAreaName[i] + '\n'}</Text>
                     {equip}
                 </View>
+            )
+
+            workoutAreas.push(
+                <Text style={{textAlign:'left', fontSize: 25, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Data:'}</Text>                
             )
             
             var temparray = allGraphs[i];
 
-            //console.log(temparray);
-
             if (temparray[0] === undefined){
                 workoutAreas.push(
-                    <Text style={{textAlign: 'center', fontSize: 30, textDecorationLine: 'underline'}}>{"\n\nNo Attendance Available\n\n"}</Text>
+                    <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{"\u2022 No Attendance Data Available\n"}</Text>
                 )
             }
             else{
