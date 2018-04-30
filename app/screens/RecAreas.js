@@ -16,8 +16,13 @@ class RecAreas extends Component{
     });
     constructor(props){
         super(props); 
+        const params = this.props.navigation.state.params;
+        //console.log("Rec Areas params: " + params); //obj
+        //console.log("Rec Areas state: " + this.props.navigation.state);//obj
+        //console.log("Rec Areas navigation: " + this.props.navigation);//obj
+        //console.log("Rec Areas params value: " + this.props.navigation.state.params.gymId);
         this.state={
-            key:this.props.navigation.state.params.gymId,
+            key:params.gymId,
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1 !== row2
             }),
