@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, ListView, AlertIOS, Alert, Button} from 'react-native'; 
 import {firebaseApp} from '../../db/DbConfig'; 
 import {Container} from '../components/Container';
-import ListItemAreaEquips from '../components/ListItemAreaEquips';
+import {ListItemAreaEquips} from '../components/List';
 import LinkBtns from "../components/Buttons/LinkBtns";
 
 

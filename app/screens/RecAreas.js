@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, ListView} from 'react-native'; 
 import {firebaseApp} from '../../db/DbConfig'; 
 import {Container} from '../components/Container';
-import ListItemRecAreas from '../components/ListItemRecAreas';
-
-
- 
+import {ListItemRecAreas} from '../components/List';
 
 const db = firebaseApp.database();
 class RecAreas extends Component{ 
