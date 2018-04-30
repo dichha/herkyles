@@ -4,8 +4,7 @@ import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpaci
 import {Container} from '../components/Container';
 
 import openMap from 'react-native-open-maps';
-import { VictoryBar } from "victory-native";
-
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryAxis } from "victory-native";
 import { Ionicons } from '@expo/vector-icons';
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
@@ -21,7 +20,7 @@ var workoutAreaEquipment=[];
 var equipmentName=[];
 var equipmentQty=[];
 var coords={};
-
+var allGraphs = [];
 
 class DetailedGymInfo extends Component{
     static navigationOptions = {
@@ -103,7 +102,6 @@ class DetailedGymInfo extends Component{
         
         console.log("*********************************")
         
-        var scheduleLink = "";
         var workoutAreas = [];
         var links = [];
         var equip = [];
@@ -111,6 +109,8 @@ class DetailedGymInfo extends Component{
         var temp2 = [];
         var equipDisplay;
         var equipDisplay2;
+
+        checkDate();
 
         links.push(
             <Text style={{textAlign: 'center',marginBottom:4, fontSize: 15, color:'red', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("closures").val())}}>
@@ -158,16 +158,24 @@ class DetailedGymInfo extends Component{
                 </View>
             )
             
-            workoutAreas.push(
+            var temparray = allGraphs[i];
 
-                <VictoryBar data={[
-                    { x: 1, y: 2, width: 12 },
-                    { x: 2, y: 3, width: 12 },
-                    { x: 3, y: 5, width: 12 },
-                    { x: 4, y: 4, width: 12 },
-                    { x: 5, y: 6, width: 12 }
-                  ]}/>
-            )
+            //console.log(temparray);
+
+            if (temparray[0] === undefined){
+                workoutAreas.push(
+                    <Text style={{textAlign: 'center', fontSize: 30, textDecorationLine: 'underline'}}>{"\n\nNo Attendance Available\n\n"}</Text>
+                )
+            }
+            else{
+                workoutAreas.push(
+                    <VictoryChart theme={VictoryTheme.grayscale} domainPadding={20} domain={{y:[0,10]}} width={deviceWidth}>
+                        <VictoryAxis label="Hour"/>
+                        <VictoryAxis dependentAxis label="Avg. Occupancy Scale" />
+                        <VictoryBar data={temparray}/>
+                    </VictoryChart>
+                )
+            }
     
             equip=[];
 
@@ -207,6 +215,65 @@ class DetailedGymInfo extends Component{
     }
 }
 
+
+function checkDate(){
+    var date = new Date();
+    var day = date.getDay();
+    var month = date.getMonth();
+    var currtime = date.getHours();
+    var time;
+    var val;
+    var tod = "";
+    var path;
+
+    var g=[];
+    allGraphs = [];
+
+    gymInfo[gymSelected].child("workoutAreas").forEach(function(area){
+
+        if(month != 1 && month != 2 && month != 3 && month != 7 && month != 8 && month != 9 && month != 10){
+            if(day != 0 && day != 6){
+                path = "attendance/Break Session/Weekdays";
+            }
+            else{
+                path = "attendance/Break Session/Weekends";
+            }
+        }
+        else{
+            if(day != 0 && day != 6){
+                path = "attendance/School Session/Weekdays";
+            }
+            else{
+                path = "attendance/School Session/Weekends";
+            }
+        }
+
+        console.log(path);
+
+        area.child(path).forEach(function(period){
+            time = period.child("0").val().split(":", 2)[0];
+            val = period.child("1").val();
+            
+            if(currtime - 12 > 0 && currtime % 12 == time && tod == "\n"){
+                g.push({x:time+tod, y:val, width: 10, fill: "gold"});
+            }
+            else if(currtime - 12 <= 0 && currtime == time && tod == ""){
+                g.push({x:time+tod, y:val, width: 10, fill: "gold"});
+            }
+            else{
+                g.push({x:time+tod, y:val, width: 10,});
+            }
+            if(time == "12"){
+                tod = "\n"
+            }
+        })
+
+        allGraphs.push(g);
+        g = [];
+        tod = "";
+    })
+
+}
 /******************STYLING******************/
 
 const styles = StyleSheet.create({
