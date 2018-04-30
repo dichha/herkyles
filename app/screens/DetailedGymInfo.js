@@ -105,11 +105,31 @@ class DetailedGymInfo extends Component{
         
         var scheduleLink = "";
         var workoutAreas = [];
+        var links = [];
         var equip = [];
         var temp = [];
         var temp2 = [];
         var equipDisplay;
         var equipDisplay2;
+
+        links.push(
+            <Text style={{textAlign: 'center',marginBottom:4, fontSize: 15, color:'red', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("closures").val())}}>
+            {'Link: Closures'}</Text>
+        )
+
+        if (gymSelected == 0){
+            links.push(
+                <Text style={{textAlign: 'center',marginBottom:4, fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("daySchedule").val())}}>
+                {'Link: Schedule'}</Text>
+            )
+        }
+        
+        if (gymSelected == 0 || gymSelected == 1){
+            links.push(
+                <Text style={{textAlign: 'center',marginBottom: 4, fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("rules").val())}}>
+                {'Link: Rules'}</Text>
+            )              
+        }
 
         for (var i=0;i<workoutAreaName.length;i++){
 
@@ -124,25 +144,6 @@ class DetailedGymInfo extends Component{
                 equip.push(
                     <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
                 )
-            }
-
-            workoutAreas.push(
-                <Text style={{textAlign: 'center', fontSize: 15, color:'red', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("closures").val())}}>
-                {'Link: Closures'}</Text>
-            )
-
-            if (gymSelected == 0){
-                workoutAreas.push(
-                    <Text style={{textAlign: 'center', fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("daySchedule").val())}}>
-                    {'Link: Schedule'}</Text>
-                )
-            }
-            
-            if (gymSelected == 0 || gymSelected == 1){
-                workoutAreas.push(
-                    <Text style={{textAlign: 'center', fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("rules").val())}}>
-                    {'Link: Rules \n'}</Text>
-                )              
             }
 
             //empty view to add horizontal line
@@ -194,7 +195,7 @@ class DetailedGymInfo extends Component{
                                 <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
 
                                 <Text style={{textAlign: 'center', fontSize: 30,fontWeight:'bold'}}>{'Workout Areas'}</Text>
-                                
+                                {links}
                                 {workoutAreas}
 
                             </TouchableOpacity>
