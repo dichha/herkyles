@@ -34,7 +34,7 @@ class DetailedGymInfo extends Component{
     constructor(props) {
         super(props);
         
-        this.state={
+        /*this.state={
             areaNames:"",
             areaCapacity:"",
             areaSchedule:"",
@@ -43,7 +43,7 @@ class DetailedGymInfo extends Component{
             areaEquipmentQty:"",
             areaEquipmentTotal:"",
         }
-        var that=this;
+        var that=this;*/
         
         const { state, navigate } = this.props.navigation;
         gymSelected=state.params.index
@@ -83,14 +83,14 @@ class DetailedGymInfo extends Component{
         })
             
         console.log(workoutAreaName);
-        that.setState({
+       /* that.setState({
             areaNames : workoutAreaName,
             areaCapacity : workoutAreaCapacity,
             areaEquipmentName : equipmentName,
             areaEquipmentQty : equipmentQty,
             areaEquipmentNameTotal: equipmentNameTotal,
             areaEquipmentQtyTotal: equipmentQtyTotal,
-        })
+        })*/
 
         coords.lat=gymInfo[gymSelected].child("coords/lat").val();
         coords.lng=gymInfo[gymSelected].child("coords/lng").val();
