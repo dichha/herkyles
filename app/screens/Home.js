@@ -1,7 +1,7 @@
 import React, { Component } from "react"; 
 import { View, Text, StyleSheet, StatusBar} from "react-native"; 
 import { StackNavigator } from "react-navigation"; 
-
+ 
 import Container from "../components/Container/Container";
 import LinkBtns from "../components/Buttons/LinkBtns/LinkBtns"; 
 import Logo from "../components/Logo/Logo";
@@ -24,7 +24,6 @@ class Home extends Component{
         this.props.navigation.navigate("Login"); 
         console.log("handle login Press"); 
     }
-
     render(){
         return (
             <Container>
@@ -39,12 +38,12 @@ class Home extends Component{
                     text="Login"
                     onPress={this.handleLoginPress}
                 />
-               
-              
-                
             </Container>
+          
         );
     }
 }
  
+
+
 export default Home; 

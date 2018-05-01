@@ -1,15 +1,11 @@
 import React, {Component} from "react"; 
 
-import Home from './Home';
-import Login from './Login';
-import GymStats from './GymStats'; 
-import Welcome from './Welcome';  
-import AuthLoading from './AuthLoading'; 
-import Signup from './Signup';
-import RecOptions from './RecOptions';
-import RecAreas from './RecAreas';
-import AreaEquip from './AreaEquip';
-import EquipEntry from './EquipEntry'; 
+import Home from "./Home";
+import Login from "./Login";
+import GymStats from "./GymStats"; 
+import Welcome from "./Welcome";  
+import AuthLoading from "./AuthLoading";
+import DetailedGymInfo from "./DetailedGymInfo"; 
 
 import {StackNavigator, SwitchNavigator} from "react-navigation"; 
 
@@ -17,24 +13,20 @@ const AppStack = StackNavigator({
     Home: {screen: Home}, 
     Login: {screen: Login}, 
     GymStats: {screen: GymStats},
-    Signup: {screen: Signup},
-   
+    DetailedGymInfo: {screen: DetailedGymInfo},
+
 }); 
 
 const AuthStack = StackNavigator({
-    Welcome: {screen: Welcome},
-    RecOptions: {screen: RecOptions},
-    RecAreas: {screen: RecAreas},
-    AreaEquip: {screen: AreaEquip},
-    EquipEntry: {screen: EquipEntry}
-});  
+    Welcome: {screen: Welcome}
+}); 
 // wrapping AppStack & AuthStack in SwitchNavigator so that when a user logs in they aren't shown previously logged in fill-in-page in navigation. 
 
 export default SwitchNavigator(
     {
         AuthLoading: AuthLoading, 
         App: AppStack, 
-        Auth: AuthStack,  
+        Auth: AuthStack, 
     }, 
     {
         initialRouteName: "AuthLoading", 
@@ -47,15 +39,12 @@ const RootStack = StackNavigator(
         Login: {screen: Login}, 
         GymStats: {screen: GymStats},
         Welcome: {screen: Welcome},  
-
     },
 );
-
 class HerkNav extends Component{
     render(){
         return <RootStack/>
     }
 }
-
 export default HerkNav; 
 */
