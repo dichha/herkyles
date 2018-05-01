@@ -1,35 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`QR Scanner renders without crashing 1`] = `
-<View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
-  accessible={true}
-  hitSlop={undefined}
-  nativeID={undefined}
-  onLayout={undefined}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  style={undefined}
-  testID={undefined}
->
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "fontSize": 15,
-        "textAlign": "center",
-      }
-    }
-  >
-    QR Scanner
-  </Text>
-</View>
-`;
+exports[`QR Scanner renders without crashing 1`] = `<View />`;
