@@ -20,7 +20,7 @@ export default EStyleSheet.create({
         flexDirection: 'column',
         padding: 0,
         justifyContent: 'center',
-        marginBottom: 20,
+        marginBottom: 30,
         shadowColor: '#303838',
         shadowOffset: { width: 0, height: 5 },
         shadowRadius: 10,

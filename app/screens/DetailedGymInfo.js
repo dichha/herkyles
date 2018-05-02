@@ -137,12 +137,12 @@ class DetailedGymInfo extends Component{
             temp2 = equipmentQtyTotal[i];
 
             equip.push(
-                <Text style={{textAlign:'left', fontSize: 25, marginLeft: 30,textDecorationLine: 'underline'}}>{'Equipment:'}</Text>                
+                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'Equipment:'}</Text>                
             )
 
             if (temp[0] === undefined){
                 equip.push(
-                    <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{"\u2022 No Equipment Data Available\n"}</Text>
+                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{"\u2022 No Equipment Data Available\n"}</Text>
                 )
             }else{
                 for(var j=0;j<temp.length;j++){
@@ -150,7 +150,7 @@ class DetailedGymInfo extends Component{
                     equipDisplay2 = temp2[j];
     
                     equip.push(
-                        <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
+                        <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
                     )
                 }
             }
@@ -163,20 +163,20 @@ class DetailedGymInfo extends Component{
 
             workoutAreas.push( 
                 <View style={styles.listContainer} key={i}>
-                    <Text style={{textAlign:'left', fontSize: 25, marginLeft: 30, fontWeight: 'bold'}}>{'\n' + workoutAreaName[i] + '\n'}</Text>
+                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30, fontWeight: 'bold'}}>{'\n' + workoutAreaName[i] + '\n'}</Text>
                     {equip}
                 </View>
             )
 
             workoutAreas.push(
-                <Text style={{textAlign:'left', fontSize: 25, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Data:'}</Text>                
+                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Data:'}</Text>                
             )
             
             var temparray = allGraphs[i];
 
             if (temparray[0] === undefined){
                 workoutAreas.push(
-                    <Text style={{textAlign:'left', fontSize: 20, marginLeft: 30}}>{"\u2022 No Attendance Data Available\n"}</Text>
+                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{"\u2022 No Attendance Data Available\n"}</Text>
                 )
             }
             else{
@@ -201,7 +201,7 @@ class DetailedGymInfo extends Component{
                             <TouchableOpacity activeOpacity={1}>
                                 <AutoHeightImage width={deviceWidth} source={{uri:gymInfo[gymSelected].child("image").val()}} />
 
-                                <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + gymInfo[gymSelected].child("name").val()}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20}}>{'\n' + gymInfo[gymSelected].child("name").val()}</Text>
 
                                 <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
 
@@ -214,7 +214,7 @@ class DetailedGymInfo extends Component{
                                
                                 <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
 
-                                <Text style={{textAlign: 'center', fontSize: 30,fontWeight:'bold'}}>{'Workout Areas'}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20,fontWeight:'bold'}}>{'Workout Areas'}</Text>
                                 {links}
                                 {workoutAreas}
 

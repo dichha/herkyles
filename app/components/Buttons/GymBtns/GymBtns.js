@@ -14,7 +14,7 @@ const GymBtns = ({image, gym, WDHours, WEHours, address, onPressNav, onPressCoor
                 <AutoHeightImage width={deviceWidth - 125} source={{uri: image}} />
             </View>
             
-            <Text style={styles.title}>{'\n' + gym}</Text>
+            <Text style={styles.title}>{gym}</Text>
             <Text style={styles.coords} onPress={onPressCoords}>{address}</Text>
             <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'Hours'}</Text>
             <Text style={styles.hours}>{WDHours}</Text>
