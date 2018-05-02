@@ -43,7 +43,7 @@ const formStyles = {
         fontWeight: '400',
         marginBottom: 7,
         },
-        // the style applied when a validation error occours
+        // the style applied when a validation error occurs
         error: {
         color: '#7F7D7D',
         fontSize: 12,
@@ -108,27 +108,26 @@ class Signup extends Component{
                 console.log("sign up was not successful");
                 this.setState({status:error.code});
             });
-            
         }
     };
     render(){
         return (
-                <Container>
-                    <Form
+            <Container>
+                <Form
                     ref={c=>this._form=c} // assign a ref
                     type={User}
                     options={options}
-                    />
-                    <LinkBtns 
+                />
+                <LinkBtns 
                     text='Sign up'
                     onPress={this.handleSubmit}
-                    />
-                     <ErrorStatus 
+                />
+                <ErrorStatus 
                     text={this.state.status} 
-                    />
-                   
-               
-                </Container>            
+                />
+                
+            
+            </Container>            
         );
     }
 };

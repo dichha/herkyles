@@ -13,7 +13,6 @@ EStyleSheet.build({
     $red: '#ff0000',
     $textInput: '#262626',
     $success: '#006600',  
-
 });
 //export default () => <Home/>;
 console.disableYellowBox = true; 
