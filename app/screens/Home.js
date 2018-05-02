@@ -31,7 +31,7 @@ class Home extends Component{
                 <StatusBar transclucent={false} barStyle="light-content"/>
                 <Logo/>
                 <LinkBtns
-                    text="Gym Stats"
+                    text="Gyms"
                     onPress={this.handleGymStatsPress}
                 />
                 <LinkBtns

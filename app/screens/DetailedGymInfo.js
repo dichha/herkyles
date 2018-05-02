@@ -114,20 +114,20 @@ class DetailedGymInfo extends Component{
 
         links.push(
             <Text style={{textAlign: 'center',marginBottom:4, fontSize: 15, color:'red', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("closures").val())}}>
-            {'Link: Closures'}</Text>
+            {'Link: Area Closures'}</Text>
         )
 
         if (gymSelected == 0){
             links.push(
                 <Text style={{textAlign: 'center',marginBottom:4, fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("daySchedule").val())}}>
-                {'Link: Schedule'}</Text>
+                {'Link: Area Schedules'}</Text>
             )
         }
         
         if (gymSelected == 0 || gymSelected == 1){
             links.push(
                 <Text style={{textAlign: 'center',marginBottom: 4, fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("rules").val())}}>
-                {'Link: Rules'}</Text>
+                {'Link: Area Rules'}</Text>
             )              
         }
 
@@ -169,7 +169,7 @@ class DetailedGymInfo extends Component{
             )
 
             workoutAreas.push(
-                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Data:'}</Text>                
+                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Graph:'}</Text>                
             )
             
             var temparray = allGraphs[i];
@@ -203,7 +203,7 @@ class DetailedGymInfo extends Component{
 
                                 <Text style={{textAlign: 'center', fontSize: 20}}>{'\n' + gymInfo[gymSelected].child("name").val()}</Text>
 
-                                <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'Hours'}</Text>
 
                                 <Text style={{textAlign: 'center', fontSize: 15}}>{gymInfo[gymSelected].child("hours/open/weekdays").val()}</Text>
 

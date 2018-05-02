@@ -11,7 +11,7 @@ const GymBtns = ({image, gym, WDHours, WEHours, address, onPressNav, onPressCoor
     <View style={styles.container}>
         <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={onPressNav}>
             <View style={{alignItems:'center',justifyContent:'center'}}>
-                <AutoHeightImage width={deviceWidth - 125} source={{uri: image}} />
+                <AutoHeightImage width={deviceWidth} source={{uri: image}} />
             </View>
             
             <Text style={styles.title}>{gym}</Text>

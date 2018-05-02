@@ -22,7 +22,7 @@ var coords = [];
 
 class GymStats extends Component{
     static navigationOptions = {
-        title: "Gym Stats", 
+        title: "Gyms", 
         headerStyle: {
             backgroundColor: "#000000",
         }, 
