@@ -1,11 +1,11 @@
 import React from "react";
-import QrScanner from "../../app/screens/QrScanner";
+import EquipEntry from "../../app/screens/EquipEntry";
 
 import renderer from "react-test-renderer";
 
-describe ("QR Scanner", () => {
+describe ("EquipEntry", () => {
   it("renders without crashing", () => {
-    const rendered = renderer.create(<QrScanner />).toJSON();
+    const rendered = renderer.create(<EquipEntry />).toJSON();
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });
