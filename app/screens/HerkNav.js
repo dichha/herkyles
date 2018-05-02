@@ -7,6 +7,7 @@ import Welcome from "./Welcome";
 import AuthLoading from "./AuthLoading";
 import DetailedGymInfo from "./DetailedGymInfo"; 
 import Signup from './Signup';
+import CodeScanner from './CodeScanner';
 import RecOptions from './RecOptions';
 import RecAreas from './RecAreas';
 import AreaEquip from './AreaEquip';

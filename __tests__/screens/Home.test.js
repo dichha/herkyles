@@ -12,6 +12,7 @@ describe ("Home", () => {
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });
+  
   it('should call navigate on pressing login', () => {
     //let handleLoginPressMock = jest.fn(); 
     //let navigationMock = {navigate: jest.fn()}

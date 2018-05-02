@@ -16,7 +16,7 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest --verbose --colors --coverage",
+    "test": "jest --verbose --colors --coverage --forceExit",
     "codacy": "cat ./coverage/lcov.info | codacy-coverage --token f620b5e1ebb447f1b56cf6bc57bf38c1"
   },
   "jest": {
@@ -29,7 +29,7 @@
         "branches": 0,
         "functions": 0,
         "lines": 0,
-        "statements": -100
+        "statements": -1000
       }
     }
   },
@@ -50,9 +50,12 @@
     "react-dom": "^16.3.1",
     "react-native": "0.54.0",
     "react-native-auto-height-image": "^1.0.0",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera",
+    "react-native-cli": "^2.0.1",
     "react-native-extended-stylesheet": "^0.8.1",
     "react-native-open-maps": "^0.1.4",
     "react-native-picker-dropdown": "^0.1.1",
+    "react-native-qrcode-scanner": "^1.0.1",
     "react-navigation": "^1.5.9",
     "tcomb-form-native": "^0.6.11",
     "victory-native": "^0.17.4"

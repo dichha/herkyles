@@ -3,6 +3,8 @@ jobs:
   test:
     docker:
       - image: circleci/node:8.9.4
+        environment:
+          JOBS: 1
     working_directory: ~/repo
     steps:
       - checkout
@@ -24,6 +26,8 @@ jobs:
   codacy:
     docker:
       - image: circleci/node:8.9.4
+        environment:
+          JOBS: 1
     working_directory: ~/repo
     steps:
       - checkout
@@ -48,6 +52,8 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:8.9.4
+        environment:
+          JOBS: 1
     working_directory: ~/repo
     steps:
       - checkout

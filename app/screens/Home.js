@@ -35,7 +35,12 @@ class Home extends Component{
 
     handleLoginPress = () => {
         this.props.navigation.navigate("Login"); 
-        console.log("handle login Press"); 
+        console.log("handle login press"); 
+    }
+
+    handleCodeScannerPress = () => {
+        this.props.navigation.navigate("CodeScanner"); 
+        console.log("handle code scanner press"); 
     }
 
     constructor(props){
