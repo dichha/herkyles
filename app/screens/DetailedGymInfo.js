@@ -113,47 +113,47 @@ class DetailedGymInfo extends Component{
 
         checkDate();
 
-       /* links.push(
+        links.push(
             <Text style={{textAlign: 'center',marginBottom:4, fontSize: 15, color:'red', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("closures").val())}}>
             {'Link: Area Closures'}</Text>
-        )*/
+        )
 
-        links.push(
+       /* links.push(
             <LinkBtns
             text="Closures"
             onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("closures").val())}}
         /> 
-        )
+        )*/
 
-        /*if (gymSelected == 0){
+        if (gymSelected == 0){
             links.push(
                 <Text style={{textAlign: 'center',marginBottom:4, fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("daySchedule").val())}}>
                 {'Link: Area Schedules'}</Text>
             )
-        }*/
-        if (gymSelected == 0){
+        }
+        /*if (gymSelected == 0){
             links.push(
                 <LinkBtns
                     text="Schedules"
                     onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("daySchedule").val())}}
                 />
             )
-        }
+        }*/
 
-        if (gymSelected == 0 || gymSelected == 1){
+       /* if (gymSelected == 0 || gymSelected == 1){
             links.push(
                 <LinkBtns
                     text="Rules"
                     onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("rules").val())}}
                 />
             ) 
-        }
-        /*if (gymSelected == 0 || gymSelected == 1){
+        }*/
+        if (gymSelected == 0 || gymSelected == 1){
             links.push(
                 <Text style={{textAlign: 'center',marginBottom: 4, fontSize: 15, color:'blue', textDecorationLine: 'underline'}}onPress={()=> {Linking.openURL(gymInfo[gymSelected].child("rules").val())}}>
                 {'Link: Area Rules'}</Text>
             )              
-        }*/
+        }
 
         for (var i=0;i<workoutAreaName.length;i++){
 
@@ -235,7 +235,8 @@ class DetailedGymInfo extends Component{
 
                                 <Text style={{textAlign: 'center', fontSize: 15, color:'blue'}}onPress={()=>openMap({latitude:coords.lat,longitude:coords.lng})}>
                                 {gymInfo[gymSelected].child("address").val() + '\n'}</Text>
-                                <View stlye={{marginLeft: 'auto', marginRight: 'auto'}}>
+                               
+                                <View style={{justifyContent:'center',alignContent:'center'}}>
                                     {links}
                                 </View>
 

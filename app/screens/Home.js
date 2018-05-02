@@ -40,7 +40,7 @@ class Home extends Component{
             link: "",
         }
         var that = this;
-        var mainRef = firebaseApp.database().ref("facilities/groupFitnessScheduleLink")
+        var mainRef = firebaseApp.database().ref("groupFitnessScheduleLink")
         var buttonLink = "";
         mainRef.once("value").then(function(dataSnapshot) {
             buttonLink = dataSnapshot.val();

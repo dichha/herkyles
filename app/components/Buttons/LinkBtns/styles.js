@@ -18,6 +18,7 @@ export default EStyleSheet.create({
     }, 
     button:{
         alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#DDDDDD',
         padding: 10,
     },
