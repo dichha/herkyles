@@ -6,7 +6,7 @@ import GymStats from './GymStats';
 import Welcome from './Welcome';  
 import AuthLoading from './AuthLoading'; 
 import Signup from './Signup';
-import QrScanner from './QrScanner';
+import CodeScanner from './CodeScanner';
 import RecOptions from './RecOptions';
 import RecAreas from './RecAreas';
 import AreaEquip from './AreaEquip';
@@ -19,7 +19,7 @@ const AppStack = StackNavigator({
     Login: {screen: Login}, 
     GymStats: {screen: GymStats},
     Signup: {screen: Signup},
-    QrScanner: {screen: QrScanner},
+    CodeScanner: {screen: CodeScanner},
 }); 
 
 const AuthStack = StackNavigator({
