@@ -65,6 +65,10 @@ class Home extends Component{
                     onPress={()=> {Linking.openURL(this.state.link)}}
                 />
                 <LinkBtns
+                    text="QR Code Scanner"
+                    onPress={this.handleCodeScannerPress}
+                />
+                <LinkBtns
                     text="Admin Login"
                     onPress={this.handleLoginPress}
                 />

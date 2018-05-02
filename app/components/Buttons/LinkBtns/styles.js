@@ -6,16 +6,19 @@ export default EStyleSheet.create({
         backgroundColor: "$grey",
         padding: 10,
         marginBottom: 10, 
-        borderRadius: 10, 
+        borderRadius: 10,
+        width: 150,
     }, 
     text:{ 
         fontSize: 18, 
         fontWeight: "600", 
-        color: "$gold",  
+        color: "$gold",
+        alignItems: 'center',
+        textAlign: 'center',
     }, 
     button:{
         alignItems: 'center',
         backgroundColor: '#DDDDDD',
-        padding: 10, 
+        padding: 10,
     },
 });
