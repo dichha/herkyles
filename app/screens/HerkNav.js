@@ -10,7 +10,8 @@ import Signup from './Signup';
 import RecOptions from './RecOptions';
 import RecAreas from './RecAreas';
 import AreaEquip from './AreaEquip';
-import EquipEntry from './EquipEntry'; 
+import EquipEntry from './EquipEntry';
+import CodeScanner from './CodeScanner';
 
 import {StackNavigator, SwitchNavigator} from "react-navigation"; 
 
@@ -19,6 +20,7 @@ const AppStack = StackNavigator({
     Login: {screen: Login}, 
     GymStats: {screen: GymStats},
     DetailedGymInfo: {screen: DetailedGymInfo},
+    CodeScanner: {screen: CodeScanner},
 
 }); 
 

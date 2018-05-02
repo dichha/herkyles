@@ -28,6 +28,11 @@ class Home extends Component{
         console.log("handle group press"); 
     }
 
+    handleCodeScannerPress = () => {
+        this.props.navigation.navigate("CodeScanner");
+        console.log("handle code scanner press");
+    }
+
     handleLoginPress = () => {
         this.props.navigation.navigate("Login"); 
         console.log("handle login Press"); 
