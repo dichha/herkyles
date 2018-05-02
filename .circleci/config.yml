@@ -3,6 +3,8 @@ jobs:
   test:
     docker:
       - image: circleci/node:8.9.4
+        environment:
+          JOBS: 1
     working_directory: ~/repo
     steps:
       - checkout
@@ -24,6 +26,8 @@ jobs:
   codacy:
     docker:
       - image: circleci/node:8.9.4
+        environment:
+          JOBS: 1
     working_directory: ~/repo
     steps:
       - checkout
@@ -41,13 +45,15 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-    #   - run:
-    #       name: Sending Coverage Data to Codacy
-    #       command: yarn run codacy
+      - run:
+          name: Sending Coverage Data to Codacy
+          command: yarn run codacy
 
   deploy:
     docker:
       - image: circleci/node:8.9.4
+        environment:
+          JOBS: 1
     working_directory: ~/repo
     steps:
       - checkout

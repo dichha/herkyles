@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { BarCodeScanner, Permissions } from 'expo';
 
-export default class App extends Component {
+class QrScanner extends Component {
   static navigationOptions = {
     title: "Home", 
     headerStyle: {
@@ -111,6 +111,8 @@ export default class App extends Component {
     );
   };
 }
+
+export default QrScanner;
 
 const styles = StyleSheet.create({
   container: {
