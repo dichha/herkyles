@@ -9,7 +9,7 @@ class CameraExample extends React.Component {
         backgroundColor: "#000000",
     }, 
       headerTintColor: '#facf33',
-};
+  };
   
   state = {
     hasCameraPermission: null,
