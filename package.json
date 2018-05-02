@@ -2,6 +2,9 @@
   "name": "herkyles",
   "version": "0.1.0",
   "private": true,
+  "ios": {
+    "bundleIdentifier": "com.herkyles.herkyles"
+  },
   "devDependencies": {
     "jest-expo": "26.0.0",
     "react-native-scripts": "1.13.1",
@@ -35,8 +38,10 @@
     "codacy": "^1.0.1-1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "exp": "^53.1.0",
     "expo": "^26.0.0",
     "firebase": "^4.12.1",
+    "ios": "^0.0.1",
     "jest": "^22.4.3",
     "jest-enzyme": "^6.0.0",
     "mock-async-storage": "^2.0.2",
