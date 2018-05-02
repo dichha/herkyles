@@ -21,7 +21,6 @@ const AppStack = StackNavigator({
     GymStats: {screen: GymStats},
     DetailedGymInfo: {screen: DetailedGymInfo},
     CodeScanner: {screen: CodeScanner},
-
 }); 
 
 const AuthStack = StackNavigator({
