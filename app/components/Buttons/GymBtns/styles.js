@@ -9,7 +9,7 @@ export default EStyleSheet.create({
     }, 
     title:{ 
         textAlign: 'center', 
-        fontSize: 30 
+        fontSize: 20 
     }, 
     hours: {
         textAlign: 'center', 

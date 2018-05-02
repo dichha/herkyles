@@ -35,7 +35,7 @@ class Home extends Component{
                     onPress={this.handleGymStatsPress}
                 />
                 <LinkBtns
-                    text="Login"
+                    text="Admin Login"
                     onPress={this.handleLoginPress}
                 />
             </Container>

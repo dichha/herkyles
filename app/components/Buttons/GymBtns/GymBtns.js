@@ -10,10 +10,13 @@ const deviceWidth = Dimensions.get('window').width;
 const GymBtns = ({image, gym, WDHours, WEHours, address, onPressNav, onPressCoords}) => (
     <View style={styles.container}>
         <TouchableOpacity activeOpacity={ 0.75 } style={ styles.button } onPress={onPressNav}>
-            <AutoHeightImage width={deviceWidth} source={{uri: image}} />
+            <View style={{alignItems:'center',justifyContent:'center'}}>
+                <AutoHeightImage width={deviceWidth - 125} source={{uri: image}} />
+            </View>
+            
             <Text style={styles.title}>{'\n' + gym}</Text>
-            <Text style={styles.coords} onPress={onPressCoords}>{'\n' + address}</Text>
-            <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
+            <Text style={styles.coords} onPress={onPressCoords}>{address}</Text>
+            <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'Hours'}</Text>
             <Text style={styles.hours}>{WDHours}</Text>
             <Text style={styles.hours}>{WEHours}</Text>
         </TouchableOpacity>
