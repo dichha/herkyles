@@ -32,22 +32,3 @@ export default SwitchNavigator(
         initialRouteName: "AuthLoading", 
     }
 ); 
-/*
-const RootStack = StackNavigator(
-    {
-        Home: {screen: Home}, 
-        Login: {screen: Login}, 
-        GymStats: {screen: GymStats},
-        Welcome: {screen: Welcome},  
-
-    },
-);
-
-class HerkNav extends Component{
-    render(){
-        return <RootStack/>
-    }
-}
-
-export default HerkNav; 
-*/
