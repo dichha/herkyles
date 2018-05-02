@@ -139,7 +139,7 @@ exports[`Home renders without crashing 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        Code  Scanner
+        Code Scanner
       </Text>
     </View>
   </View>
