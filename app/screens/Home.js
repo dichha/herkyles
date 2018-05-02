@@ -43,15 +43,14 @@ class Home extends Component{
         var mainRef = firebaseApp.database().ref("facilities/groupFitnessScheduleLink")
         var buttonLink = "";
         mainRef.once("value").then(function(dataSnapshot) {
-            gymDB=dataSnapshot;
             buttonLink = dataSnapshot.val();
-            })
             that.setState({
                 link: buttonLink,
             })
+        })
+
     }
     render(){
-        console.log("this.state.link="+this.state.link);
         return (
             <Container>
                 
@@ -63,7 +62,7 @@ class Home extends Component{
                 />
                 <LinkBtns
                     text="Group Fitness Schedule"
-                    onPress={()=> {Linking.openURL("https://recserv.uiowa.edu/programs/fitness/group-fitness/group-fitness-schedule")}}
+                    onPress={()=> {Linking.openURL(this.state.link)}}
                 />
                 <LinkBtns
                     text="Admin Login"
