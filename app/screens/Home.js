@@ -25,9 +25,9 @@ class Home extends Component{
         console.log("handle login press"); 
     }
 
-    handleQrScannerPress = () => {
-        this.props.navigation.navigate("QrScanner"); 
-        console.log("handle qr scanner press"); 
+    handleCodeScannerPress = () => {
+        this.props.navigation.navigate("CodeScanner"); 
+        console.log("handle code scanner press"); 
     }
 
     render(){
@@ -45,8 +45,9 @@ class Home extends Component{
                     onPress={this.handleLoginPress}
                 />
                 <LinkBtns
-                    text="QR Scanner"
-                    onPress={this.handleQrScannerPress}
+                    text="Code 
+                    Scanner"
+                    onPress={this.handleCodeScannerPress}
                 />
             </Container>
         );
