@@ -1,127 +1,124 @@
 import React, { Component } from 'react'; 
-import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpacity, TouchableHighlight, Navigator} from 'react-native'; 
-
+import {  StyleSheet, ScrollView, View, Alert, Image, Dimensions, TouchableOpacity, TouchableHighlight, Navigator } from 'react-native'; 
+import { StackNavigator } from "react-navigation"; 
 import {Container} from '../components/Container';
 
 import { Ionicons } from '@expo/vector-icons';
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import {firebaseApp} from '../../db/DbConfig';
-import { Picker } from 'react-native-picker-dropdown'
+import openMap from 'react-native-open-maps';
+import GymBtns from '../components/Buttons/GymBtns/GymBtns';
 
 const deviceWidth = Dimensions.get('window').width;
 
-var pageArray = []
+var gymDB ={};
 var nameArray = [];
 var imageArray = [];
-var routeArray = [];
+var addressArray =[];
 var weekdayHours = [];
 var weekendHours = [];
+var coords = [];
 
 class GymStats extends Component{
     static navigationOptions = {
-        title: "Gym Stats", 
+        title: "Gyms", 
         headerStyle: {
             backgroundColor: "#000000",
         }, 
           headerTintColor: '#facf33',
     };
 
+    handleGymPress = (i) => {
+        this.props.navigation.navigate("DetailedGymInfo",{data:gymDB,index:i});
+        console.log("Handled pressing on Gym");
+    }
+
     constructor(props) {
         super(props);
-        this.state = { language: 'js'  }
         this.state={
             gyms: "",
             images: "test",
-            pages: "",
-            routes: "",
+            address:"",
             WDHours: "",
             WEHours: "",
+            coords:"",
         }
         var that = this;
         var mainRef = firebaseApp.database().ref("facilities")
         
         mainRef.once("value").then(function(dataSnapshot) {
           var i = 0;
+          gymDB=dataSnapshot;
           dataSnapshot.forEach(function(testingSnap){
             nameArray[i] = testingSnap.child("name").val();
             imageArray[i] = testingSnap.child("image").val();
-            pageArray[i] = testingSnap.child("page").val();
+            addressArray[i] = testingSnap.child("address").val();
             weekdayHours[i] = testingSnap.child("hours/open/weekdays").val();
             weekendHours[i] = testingSnap.child("hours/open/weekends").val();
-            routeArray[i] = i;
+            coords[i] =testingSnap.child("coords").val();
             i++;
+
           })
           that.setState({
             gyms : nameArray,
             images : imageArray,
-            pages : pageArray,
-            routes : routeArray,
+            address: addressArray,
             WDHours : weekdayHours,
             WEHours : weekendHours,
+            coords : coords,
           })
         })
     }
 
     render(){
 
-        var screen = [];
-        for(x = 0; x < this.state.gyms.length; x++){
-            testpage = "" + this.state.pages[x];
-            //console.log(x)
-            screen.push(
-                <View key = {x.toString()} style={styles.container}>
-                    <TouchableOpacity key = {x.toString()} activeOpacity={ 0.75 } style={ styles.button } onPress={() => Alert.alert(this.props.key)}>
-                        <AutoHeightImage width={deviceWidth} source={{uri: this.state.images[x]}} />
-                        <Text style={{textAlign: 'center', fontSize: 30}}>{'\n' + this.state.gyms[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 20, textDecorationLine: 'underline'}}>{'\nHours'}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WDHours[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.WEHours[x]}</Text>
-                        <Text style={{textAlign: 'center', fontSize: 15}}>{this.state.pages[x]}</Text>
-                    </TouchableOpacity>
-                </View>
-            )
-        }  
-
+        var screen = [this.state.gyms.length]
         return (
             <Container>
 	            <Content>
 	                <ScrollView scrollsToTop={true} ref={(ref) => this.myScroll = ref}>
-                        {screen}
+                        <GymBtns
+                            image = {this.state.images[0]}
+                            gym = {this.state.gyms[0]}
+                            WDHours = {this.state.WDHours[0]}
+                            WEHours = {this.state.WEHours[0]}
+                            address = {this.state.address[0]}
+                            onPressNav = {()=>this.handleGymPress(0)}
+                            onPressCoords = {()=>openMap({ latitude: this.state.coords[0].lat, longitude: this.state.coords[0].lng, name: this.state.gyms[0]})}
+                        />
+                        <GymBtns
+                            image = {this.state.images[1]}
+                            gym = {this.state.gyms[1]}
+                            WDHours = {this.state.WDHours[1]}
+                            WEHours = {this.state.WEHours[1]}
+                            address = {this.state.address[1]}
+                            onPressNav = {()=>this.handleGymPress(1)}
+                            onPressCoords = {()=>openMap({ latitude: this.state.coords[1].lat, longitude: this.state.coords[1].lng, name: this.state.gyms[1]})}
+                        />
+                        <GymBtns
+                            image = {this.state.images[2]}
+                            gym = {this.state.gyms[2]}
+                            WDHours = {this.state.WDHours[2]}
+                            WEHours = {this.state.WEHours[2]}
+                            address = {this.state.address[2]}
+                            onPressNav = {()=>this.handleGymPress(2)}
+                            onPressCoords = {()=>openMap({ latitude: this.state.coords[2].lat, longitude: this.state.coords[2].lng, name: this.state.gyms[2]})}
+                        />
+                        <GymBtns
+                            image = {this.state.images[3]}
+                            gym = {this.state.gyms[3]}
+                            WDHours = {this.state.WDHours[3]}
+                            WEHours = {this.state.WEHours[3]}
+                            address = {this.state.address[3]}
+                            onPressNav = {()=>this.handleGymPress(3)}
+                            onPressCoords = {()=>openMap({ latitude: this.state.coords[3].lat, longitude: this.state.coords[3].lng, name: this.state.gyms[3]})}
+                        />
                     </ScrollView>
 	            </Content>
             </Container>            
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    buttonContainer: {
-      margin: 20,
-      marginTop: 100
-    },
-    alternativeLayoutButtonContainer: {
-      margin: 20,
-      flexDirection: 'row',
-      justifyContent: 'space-between'
-    },
-    button: {
-        flex: 1,
-        flexDirection: 'column',
-        padding: 0,
-        justifyContent: 'center',
-      marginBottom: 20,
-      shadowColor: '#303838',
-      shadowOffset: { width: 0, height: 5 },
-      shadowRadius: 10,
-      shadowOpacity: 0.35,
-    }
-  });
-  
 
 export default GymStats; 
