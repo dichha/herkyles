@@ -1,11 +1,11 @@
 import React from "react";
-import Login from "./../app/screens/Login";
+import RecOptions from "../../app/screens/RecOptions";
 
 import renderer from "react-test-renderer";
 
-describe ("Login", () => {
+describe ("RecOptions", () => {
   it("renders without crashing", () => {
-    const rendered = renderer.create(<Login />).toJSON();
+    const rendered = renderer.create(<RecOptions />).toJSON();
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });

@@ -35,7 +35,7 @@ class Login extends Component{
         }catch(e){
             console.log(e);
         }
-    }; 
+    };
     
     _signInAsync = async (email) => {
         const userTokenValue = Math.round((Math.random()*1000));
@@ -82,29 +82,33 @@ class Login extends Component{
                 text="Log in"
                 onPress={this.onLoginPress}  />;
     }
-    renderSuccessStatus = () => {
+   /* renderSuccessStatus = () => {
         if(this.state.signupToLoginStatus){
             return <SuccessStatus text={this.state.signupToLoginStatus}/>
         }; 
-    }
+    }*/
    
-    handleSignupPress = () => {
+   /* handleSignupPress = () => {
         this.props.navigation.navigate('Signup'); 
         console.log("Sign up pressed"); 
+    } */
+
+    convertToUpperCase = (label) => {
+        return label.toUpperCase(); 
     }
 
     render(){
         return (
             <Container>
                 <TitledInput
-                    label="Email Address"
+                    label= {this.convertToUpperCase('Email Address')}
                     placeholder="you@domain.com"
                     value={this.state.email}
                     onChangeText={email =>this.setState({email})}
                     secureTextEntry={false}
                 />
                  <TitledInput
-                    label="Password"
+                    label= {this.convertToUpperCase("Password")}
                     placeholder="********"
                     value={this.state.password}
                     onChangeText={password =>this.setState({password})}
@@ -113,14 +117,9 @@ class Login extends Component{
                 <ErrorStatus 
                     text={this.state.error} 
                 />
-                     
-                {this.renderSuccessStatus()}
 
-                
                 {this.renderButtonOrSpinner()}
-                <LinkTouch 
-                    text="No account? Signup" onPress={this.handleSignupPress}
-                />  
+ 
             </Container>            
         );
     }

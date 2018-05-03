@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome renders without crashing 1`] = `
+exports[`Login renders without crashing 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -18,21 +18,58 @@ exports[`Welcome renders without crashing 1`] = `
   style={undefined}
   testID={undefined}
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <View
+    style={undefined}
   >
-    Welcome Admin
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={undefined}
+    >
+      EMAIL ADDRESS
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      autoCorrect={false}
+      onChangeText={[Function]}
+      placeholder="you@domain.com"
+      secureTextEntry={false}
+      style={undefined}
+      value=""
+    />
+  </View>
+  <View
+    style={undefined}
   >
-     Hello 
-    
-  </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={undefined}
+    >
+      PASSWORD
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      autoCorrect={false}
+      onChangeText={[Function]}
+      placeholder="********"
+      secureTextEntry={true}
+      style={undefined}
+      value=""
+    />
+  </View>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={undefined}
+    >
+      
+    </Text>
+  </View>
   <View
     accessibilityComponentType={undefined}
     accessibilityLabel={undefined}
@@ -65,7 +102,7 @@ exports[`Welcome renders without crashing 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        Logout
+        Log in
       </Text>
     </View>
   </View>

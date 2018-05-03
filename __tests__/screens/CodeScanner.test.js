@@ -1,11 +1,11 @@
 import React from "react";
-import App from "./../App";
+import CodeScanner from "../../app/screens/CodeScanner";
 
 import renderer from "react-test-renderer";
 
-describe ("App", () => {
+describe ("Code Scanner", () => {
   it("renders without crashing", () => {
-    const rendered = renderer.create(<App />).toJSON();
+    const rendered = renderer.create(<CodeScanner />).toJSON();
     expect(rendered).toBeTruthy();
     expect(rendered).toMatchSnapshot();
   });

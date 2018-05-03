@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login renders without crashing 1`] = `
+exports[`Home renders without crashing 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -21,53 +21,18 @@ exports[`Login renders without crashing 1`] = `
   <View
     style={undefined}
   >
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
+    <Image
+      resizeMode="contain"
+      source={1}
       style={undefined}
-    >
-      EMAIL ADDRESS
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      autoCorrect={false}
-      onChangeText={[Function]}
-      placeholder="you@domain.com"
-      secureTextEntry={false}
-      style={undefined}
-      value=""
     />
-  </View>
-  <View
-    style={undefined}
-  >
     <Text
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
       style={undefined}
     >
-      PASSWORD
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      autoCorrect={false}
-      onChangeText={[Function]}
-      placeholder="********"
-      secureTextEntry={true}
-      style={undefined}
-      value=""
-    />
-  </View>
-  <View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={undefined}
-    >
-      
+      Herkyles
     </Text>
   </View>
   <View
@@ -102,7 +67,7 @@ exports[`Login renders without crashing 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        Log in
+        Gyms
       </Text>
     </View>
   </View>
@@ -138,7 +103,79 @@ exports[`Login renders without crashing 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        No account? Signup
+        Group Fitness Schedule
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={undefined}
+      >
+        QR Code Scanner
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={undefined}
+      >
+        Admin Login
       </Text>
     </View>
   </View>

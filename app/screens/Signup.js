@@ -24,7 +24,6 @@ const styles = EStyleSheet.create({
 }); 
 const User = t.struct({
     email: t.String, 
-    username: t.maybe(t.String), 
     password: t.String, 
     terms: t.Boolean, 
 }); 
@@ -43,7 +42,7 @@ const formStyles = {
         fontWeight: '400',
         marginBottom: 7,
         },
-        // the style applied when a validation error occours
+        // the style applied when a validation error occurs
         error: {
         color: '#7F7D7D',
         fontSize: 12,
@@ -82,10 +81,10 @@ class Signup extends Component{
     _signUpAsync = async () => {
         try{
             const statusFlag = 'successfully signed up!';
-            await AsyncStorage.setItem("signupToLogin",statusFlag);
-            let stlStatus = await AsyncStorage.getItem("signupToLogin"); 
+            await AsyncStorage.setItem("signupToWelcome",statusFlag);
+            let stlStatus = await AsyncStorage.getItem("signupToWelcome"); 
             console.log('status from signup ' + stlStatus );
-            this.props.navigation.navigate('Login', {});
+            this.props.navigation.navigate('Welcome', {});
 
         }catch(e){
             console.log(e);
@@ -108,27 +107,26 @@ class Signup extends Component{
                 console.log("sign up was not successful");
                 this.setState({status:error.code});
             });
-            
         }
     };
     render(){
         return (
-                <Container>
-                    <Form
+            <Container>
+                <Form
                     ref={c=>this._form=c} // assign a ref
                     type={User}
                     options={options}
-                    />
-                    <LinkBtns 
+                />
+                <LinkBtns 
                     text='Sign up'
                     onPress={this.handleSubmit}
-                    />
-                     <ErrorStatus 
+                />
+                <ErrorStatus 
                     text={this.state.status} 
-                    />
-                   
-               
-                </Container>            
+                />
+                
+            
+            </Container>            
         );
     }
 };

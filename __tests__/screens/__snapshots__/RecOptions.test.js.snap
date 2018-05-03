@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecOptions renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#f2f2f2",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    dataSource={
+      ListViewDataSource {
+        "items": "unknown",
+      }
+    }
+    enableEmptySections={true}
+    renderRow={[Function]}
+    renderScrollComponent={[Function]}
+    style={undefined}
+  >
+    <View />
+  </RCTScrollView>
+</View>
+`;
