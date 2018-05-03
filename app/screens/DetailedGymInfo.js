@@ -11,6 +11,9 @@ import AutoHeightImage from 'react-native-auto-height-image';
 import { Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import {firebaseApp} from '../../db/DbConfig';
 
+import Expandable from 'react-native-expandable';
+
+
 const deviceWidth = Dimensions.get('window').width;
 
 var gymSelected=0;
@@ -172,9 +175,9 @@ class DetailedGymInfo extends Component{
                 for(var j=0;j<temp.length;j++){
                     equipDisplay = temp[j];
                     equipDisplay2 = temp2[j];
-    
+
                     equip.push(
-                        <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
+                        <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{'\n'}{'\u2022' + equipDisplay} ({equipDisplay2})</Text>
                     )
                 }
             }
@@ -184,21 +187,42 @@ class DetailedGymInfo extends Component{
             workoutAreas.push(
                 <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
             )
-
-            workoutAreas.push( 
-                <View style={styles.listContainer} key={i}>
-                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30, fontWeight: 'bold'}}>{'\n' + workoutAreaName[i] + '\n'}</Text>
-                    {equip}
-                </View>
-            )
-
-            workoutAreas.push(
-                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Graph:'}</Text>                
-            )
             
             var temparray = allGraphs[i];
 
-            if (temparray[0] === undefined){
+            if (temparray[0]==undefined){
+                workoutAreas.push(
+                    <Expandable style={{marginLeft:30}} title= {workoutAreaName[i]} collapsed={true}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                            <View style={{ flex: 1 }}>
+                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{equip}</Text>
+                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Graph:'}</Text>
+                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{"\u2022 No Attendance Data Available\n"}</Text> 
+                            </View>
+                        </View>
+                    </Expandable>
+     
+                )
+            }
+            else{
+                workoutAreas.push(
+                    <Expandable title= {workoutAreaName[i]} collapsed={true}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                            <View style={{ flex: 1 }}>
+                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{equip}</Text>
+                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Graph:'}</Text>
+                                <VictoryChart theme={VictoryTheme.grayscale} domainPadding={20} domain={{y:[0,10]}} width={deviceWidth}>
+                                    <VictoryAxis label="Hour"/>
+                                    <VictoryAxis dependentAxis label="Avg. Occupancy Scale" />
+                                    <VictoryBar data={temparray}/>
+                                </VictoryChart>
+                            </View>
+                        </View>
+                    </Expandable>
+                )
+            }
+
+            /*if (temparray[0] === undefined){
                 workoutAreas.push(
                     <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{"\u2022 No Attendance Data Available\n"}</Text>
                 )
@@ -211,7 +235,7 @@ class DetailedGymInfo extends Component{
                         <VictoryBar data={temparray}/>
                     </VictoryChart>
                 )
-            }
+            }*/
     
             equip=[];
 
@@ -242,7 +266,7 @@ class DetailedGymInfo extends Component{
 
                                 <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
 
-                                <Text style={{textAlign: 'center', fontSize: 20,fontWeight:'bold'}}>{'Workout Areas'}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20,fontWeight:'bold'}}>{'Workout Areas (click to expand info)'}</Text>
                                 
                                 {workoutAreas}
 
