@@ -7,7 +7,7 @@ import HerkNav from "./screens/HerkNav";
 EStyleSheet.build({
     $white: '#FFFFFF',
     $black: '#000000',
-    $gold: '#FFFF00',
+    $gold: '#facf33',
     $grey: '#4C4C4C',
     $faintGrey: '#7F7D7D',  
     $red: '#ff0000',

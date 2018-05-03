@@ -106,4 +106,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CodeScanner;
+export default CodeScanner

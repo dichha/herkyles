@@ -2,6 +2,9 @@
   "name": "herkyles",
   "version": "0.1.0",
   "private": true,
+  "ios": {
+    "bundleIdentifier": "com.herkyles.herkyles"
+  },
   "devDependencies": {
     "jest-expo": "26.0.0",
     "react-native-scripts": "1.13.1",
@@ -35,8 +38,10 @@
     "codacy": "^1.0.1-1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "exp": "^53.1.0",
     "expo": "^26.0.0",
     "firebase": "^4.12.1",
+    "ios": "^0.0.1",
     "jest": "^22.4.3",
     "jest-enzyme": "^6.0.0",
     "mock-async-storage": "^2.0.2",
@@ -48,9 +53,11 @@
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera",
     "react-native-cli": "^2.0.1",
     "react-native-extended-stylesheet": "^0.8.1",
+    "react-native-open-maps": "^0.1.4",
     "react-native-picker-dropdown": "^0.1.1",
     "react-native-qrcode-scanner": "^1.0.1",
     "react-navigation": "^1.5.9",
-    "tcomb-form-native": "^0.6.11"
+    "tcomb-form-native": "^0.6.11",
+    "victory-native": "^0.17.4"
   }
 }

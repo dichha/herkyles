@@ -14,7 +14,7 @@ const db = firebaseApp.database();
 
 class RecOptions extends Component{
     static navigationOptions={
-        title: "RecOptions", 
+        title: "Manage Gyms", 
         headerStyle: {
             backgroundColor: "#000000",
         }, 
