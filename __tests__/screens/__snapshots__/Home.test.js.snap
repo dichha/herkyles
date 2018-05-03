@@ -67,7 +67,7 @@ exports[`Home renders without crashing 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        Gym Stats
+        Gyms
       </Text>
     </View>
   </View>
@@ -103,7 +103,7 @@ exports[`Home renders without crashing 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        Login
+        Group Fitness Schedule
       </Text>
     </View>
   </View>
@@ -139,7 +139,43 @@ exports[`Home renders without crashing 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        Code Scanner
+        QR Code Scanner
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={undefined}
+      >
+        Admin Login
       </Text>
     </View>
   </View>
