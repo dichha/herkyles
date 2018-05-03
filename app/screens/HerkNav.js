@@ -12,7 +12,6 @@ import RecOptions from './RecOptions';
 import RecAreas from './RecAreas';
 import AreaEquip from './AreaEquip';
 import EquipEntry from './EquipEntry';
-import CodeScanner from './CodeScanner';
 
 import {StackNavigator, SwitchNavigator} from "react-navigation"; 
 
