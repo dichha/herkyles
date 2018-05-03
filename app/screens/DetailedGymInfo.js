@@ -169,7 +169,7 @@ class DetailedGymInfo extends Component{
 
             if (temp[0] === undefined){
                 equip.push(
-                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{"\u2022 No Equipment Data Available\n"}</Text>
+                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{'\n'}{"\u2022 No Equipment Data Available\n"}</Text>
                 )
             }else{
                 for(var j=0;j<temp.length;j++){
@@ -185,14 +185,14 @@ class DetailedGymInfo extends Component{
 
             //empty view to add horizontal line
             workoutAreas.push(
-                <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
+                <View style={{borderTopColor: 'black', borderTopWidth: 5,}}></View>
             )
             
             var temparray = allGraphs[i];
 
             if (temparray[0]==undefined){
                 workoutAreas.push(
-                    <Expandable style={{marginLeft:30}} title= {workoutAreaName[i]} collapsed={true}>
+                    <Expandable style={{marginLeft:100}} title= {workoutAreaName[i]} collapsed={true}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flex: 1 }}>
                                 <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{equip}</Text>
@@ -206,7 +206,7 @@ class DetailedGymInfo extends Component{
             }
             else{
                 workoutAreas.push(
-                    <Expandable title= {workoutAreaName[i]} collapsed={true}>
+                    <Expandable style={{marginLeft:30}} title= {workoutAreaName[i]} collapsed={true}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flex: 1 }}>
                                 <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{equip}</Text>
@@ -221,21 +221,6 @@ class DetailedGymInfo extends Component{
                     </Expandable>
                 )
             }
-
-            /*if (temparray[0] === undefined){
-                workoutAreas.push(
-                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{"\u2022 No Attendance Data Available\n"}</Text>
-                )
-            }
-            else{
-                workoutAreas.push(
-                    <VictoryChart theme={VictoryTheme.grayscale} domainPadding={20} domain={{y:[0,10]}} width={deviceWidth}>
-                        <VictoryAxis label="Hour"/>
-                        <VictoryAxis dependentAxis label="Avg. Occupancy Scale" />
-                        <VictoryBar data={temparray}/>
-                    </VictoryChart>
-                )
-            }*/
     
             equip=[];
 
@@ -264,9 +249,9 @@ class DetailedGymInfo extends Component{
                                     {links}
                                 </View>
 
-                                <View style={{borderTopColor: 'black', borderTopWidth: 8,}}></View>
+                                <View style={{borderTopColor: 'black', borderTopWidth: 5,}}></View>
 
-                                <Text style={{textAlign: 'center', fontSize: 20,fontWeight:'bold'}}>{'Workout Areas (click to expand info)'}</Text>
+                                <Text style={{textAlign: 'center', fontSize: 20,fontWeight:'bold'}}>{'\nWorkout Areas (click to expand info)\n'}</Text>
                                 
                                 {workoutAreas}
 
