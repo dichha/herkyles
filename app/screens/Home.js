@@ -7,6 +7,8 @@ import LinkBtns from "../components/Buttons/LinkBtns/LinkBtns";
 import Logo from "../components/Logo/Logo";
 import {firebaseApp} from '../../db/DbConfig';
  
+var buttonLink = "";
+
 
 class Home extends Component{
     static navigationOptions = {
@@ -17,6 +19,7 @@ class Home extends Component{
           headerTintColor: '#facf33',
     };
 
+    
 
     handleGymStatsPress = () => {
         this.props.navigation.navigate("GymStats"); 
@@ -46,19 +49,11 @@ class Home extends Component{
     constructor(props){
         super(props);
 
-        this.state={
-            link: "",
-        }
-        var that = this;
         var mainRef = firebaseApp.database().ref("groupFitnessScheduleLink")
-        var buttonLink = "";
+        
         mainRef.once("value").then(function(dataSnapshot) {
             buttonLink = dataSnapshot.val();
-            that.setState({
-                link: buttonLink,
-            })
         })
-
     }
     render(){
         return (
@@ -72,7 +67,7 @@ class Home extends Component{
                 />
                 <LinkBtns
                     text="Group Fitness Schedule"
-                    onPress={()=> {Linking.openURL(this.state.link)}}
+                    onPress={()=> {Linking.openURL(buttonLink)}}
                 />
                 <LinkBtns
                     text="QR Code Scanner"
