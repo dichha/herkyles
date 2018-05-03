@@ -172,33 +172,37 @@ class DetailedGymInfo extends Component{
 
             if (temparray[0]==undefined){
                 workoutAreas.push(
-                    <Expandable title= {'    '+ workoutAreaName[i]} collapsed={true}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <View style={{ flex: 1 }}>
-                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{equip}</Text>
-                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Graph:'}</Text>
-                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{"\u2022 No Attendance Data Available\n"}</Text> 
+                    <View style={{marginLeft:15,marginRight:15}}>
+                        <Expandable title= {workoutAreaName[i]} collapsed={true}>
+                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{equip}</Text>
+                                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Graph:'}</Text>
+                                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{"\u2022 No Attendance Data Available\n"}</Text> 
+                                </View>
                             </View>
-                        </View>
-                    </Expandable>
+                        </Expandable>
+                    </View>
      
                 )
             }
             else{
                 workoutAreas.push(
-                    <Expandable title= {'    '+workoutAreaName[i]} collapsed={true}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <View style={{ flex: 1 }}>
-                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{equip}</Text>
-                                <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Graph:'}</Text>
-                                <VictoryChart theme={VictoryTheme.grayscale} domainPadding={20} domain={{y:[0,10]}} width={deviceWidth}>
-                                    <VictoryAxis label="Hour"/>
-                                    <VictoryAxis dependentAxis label="Avg. Occupancy Scale" />
-                                    <VictoryBar data={temparray}/>
-                                </VictoryChart>
+                    <View style={{marginLeft:15,marginRight:15}}>
+                        <Expandable title= {workoutAreaName[i]} collapsed={true}>
+                            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                <View style={{ flex: 1 }}>
+                                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30}}>{equip}</Text>
+                                    <Text style={{textAlign:'left', fontSize: 15, marginLeft: 30,textDecorationLine: 'underline'}}>{'\nHistorical Occupancy Graph:'}</Text>
+                                    <VictoryChart theme={VictoryTheme.grayscale} domainPadding={20} domain={{y:[0,10]}} width={deviceWidth}>
+                                        <VictoryAxis label="Hour"/>
+                                        <VictoryAxis dependentAxis label="Avg. Occupancy Scale" />
+                                        <VictoryBar data={temparray}/>
+                                    </VictoryChart>
+                                </View>
                             </View>
-                        </View>
-                    </Expandable>
+                        </Expandable>
+                    </View>
                 )
             }
     
