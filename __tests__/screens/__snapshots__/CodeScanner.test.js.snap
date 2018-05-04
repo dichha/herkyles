@@ -15,6 +15,24 @@ exports[`Code Scanner renders without crashing 1`] = `
     accessible={true}
     allowFontScaling={true}
     ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 15,
+        "textAlign": "center",
+      }
+    }
+  >
+    Some machines have a QR code located on it. 
+ Scan the code using the scanner below to receive more information about the machine.
+
+
+
+
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
   >
     Requesting for camera permission
   </Text>
