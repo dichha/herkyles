@@ -51,6 +51,19 @@ describe ("Home", () => {
     expect(navigationMock.navigate).toHaveBeenCalledTimes(1); 
   
   });
+
+  it('should call Linking on pressing CodeScanner', () => {
+    const navigationMock = {navigate: jest.fn()}; 
+
+    let homeComponent = renderer.create(<Home 
+        navigation={navigationMock}
+      />
+    ).getInstance(); 
+
+    homeComponent.handleCodeScannerPress(); 
+    expect(navigationMock.navigate).toHaveBeenCalledTimes(1); 
+  
+  });
   /*
   it("should console.log handle gym stats press", () => {
     handleGymStatsPress = jest.fn(); 

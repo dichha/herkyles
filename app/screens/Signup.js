@@ -81,10 +81,10 @@ class Signup extends Component{
     _signUpAsync = async () => {
         try{
             const statusFlag = 'successfully signed up!';
-            await AsyncStorage.setItem("signupToWelcome",statusFlag);
-            let stlStatus = await AsyncStorage.getItem("signupToWelcome"); 
+            await AsyncStorage.setItem("signupToLogin",statusFlag);
+            let stlStatus = await AsyncStorage.getItem("signupToLogin"); 
             console.log('status from signup ' + stlStatus );
-            this.props.navigation.navigate('Welcome', {});
+            this.props.navigation.navigate('Login', {});
 
         }catch(e){
             console.log(e);

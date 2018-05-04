@@ -51,11 +51,11 @@ class Welcome extends Component{
         }
     }
 
-    handleSignupPress = () => {
+    /*handleSignupPress = () => {
         {this._removeSignupToWelcomeStatus()};
         this.props.navigation.navigate('Signup'); 
         console.log("Sign up pressed"); 
-    } 
+    }*/ 
 
     handleLogout = async () => {
         try{
@@ -76,15 +76,15 @@ class Welcome extends Component{
         }
     }
 
-    renderSuccessStatus = () => {
+    /*renderSuccessStatus = () => {
         if(this.state.signupToWelcomeStatus){
             return <SuccessStatus text={this.state.signupToWelcomeStatus}/>
         };
-    }
+    }*/
 
-    _removeSignupToWelcomeStatus = async () => {
+    /*_removeSignupToWelcomeStatus = async () => {
         await AsyncStorage.removeItem('signupToWelcome'); 
-    }; 
+    }; */
 
 
 
@@ -107,8 +107,6 @@ class Welcome extends Component{
                     <LinkTouch 
                     text="Logout"
                     onPress={this.handleLogout} />
-
-                    {this.renderSuccessStatus()}
 
                 </Container>            
         );

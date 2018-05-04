@@ -82,16 +82,16 @@ class Login extends Component{
                 text="Log in"
                 onPress={this.onLoginPress}  />;
     }
-   /* renderSuccessStatus = () => {
+    renderSuccessStatus = () => {
         if(this.state.signupToLoginStatus){
             return <SuccessStatus text={this.state.signupToLoginStatus}/>
         }; 
-    }*/
+    }
    
-   /* handleSignupPress = () => {
+   handleSignupPress = () => {
         this.props.navigation.navigate('Signup'); 
         console.log("Sign up pressed"); 
-    } */
+    }
 
     convertToUpperCase = (label) => {
         return label.toUpperCase(); 
@@ -118,7 +118,12 @@ class Login extends Component{
                     text={this.state.error} 
                 />
 
+                {this.renderSuccessStatus()}
                 {this.renderButtonOrSpinner()}
+
+                <LinkTouch
+                    text="No account? Signup" onPress={this.handleSignupPress}
+                />
  
             </Container>            
         );
