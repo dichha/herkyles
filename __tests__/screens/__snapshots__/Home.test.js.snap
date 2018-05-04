@@ -175,7 +175,7 @@ exports[`Home renders without crashing 1`] = `
         ellipsizeMode="tail"
         style={undefined}
       >
-        Admin Login
+        Login
       </Text>
     </View>
   </View>
