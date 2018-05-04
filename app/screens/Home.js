@@ -74,7 +74,7 @@ class Home extends Component{
                     onPress={this.handleCodeScannerPress}
                 />
                 <LinkBtns
-                    text="Admin Login"
+                    text="Login"
                     onPress={this.handleLoginPress}
                 />
             </Container>
