@@ -21,7 +21,6 @@ const AppStack = StackNavigator({
     GymStats: {screen: GymStats},
     DetailedGymInfo: {screen: DetailedGymInfo},
     CodeScanner: {screen: CodeScanner},
-    Signup: {screen: Signup},
 }); 
 
 const AuthStack = StackNavigator({
@@ -29,7 +28,8 @@ const AuthStack = StackNavigator({
     RecOptions: {screen: RecOptions},
     RecAreas: {screen: RecAreas},
     AreaEquip: {screen: AreaEquip},
-    EquipEntry: {screen: EquipEntry}
+    EquipEntry: {screen: EquipEntry},
+    Signup: {screen:Signup},
 }); 
 // wrapping AppStack & AuthStack in SwitchNavigator so that when a user logs in they aren't shown previously logged in fill-in-page in navigation. 
 

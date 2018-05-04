@@ -23,9 +23,9 @@ class Login extends Component{
     constructor(props){
         super(props); 
         this.state = {email: '', password: '', error: '', loading: false, signupToLoginStatus: ''}; 
-        this._getStatus(); 
+        //this._getStatus(); 
     }; 
-    _getStatus = async () =>{
+   /* _getStatus = async () =>{
         try{
             let status = await AsyncStorage.getItem('signupToLogin');
             console.log("status in login: " + status);
@@ -35,7 +35,7 @@ class Login extends Component{
         }catch(e){
             console.log(e);
         }
-    };
+    };*/
     
     _signInAsync = async (email) => {
         const userTokenValue = Math.round((Math.random()*1000));
@@ -48,14 +48,14 @@ class Login extends Component{
         
         this.props.navigation.navigate('Auth');
     }; 
-    _removeSignupToLoginStatus = async () => {
+   /* _removeSignupToLoginStatus = async () => {
         await AsyncStorage.removeItem('signupToLogin'); 
-    }; 
+    };*/
 
 
     onLoginPress = () => {
         this.setState({ error: '', loading: true, signupToLoginStatus: '' });
-        {this._removeSignupToLoginStatus()}; 
+       // {this._removeSignupToLoginStatus()}; 
         const { email, password } = this.state;
         firebaseApp.auth().signInWithEmailAndPassword(email, password)
             .then(() => { this.setState({ error: "", loading: false });
@@ -82,7 +82,7 @@ class Login extends Component{
                 text="Log in"
                 onPress={this.onLoginPress}  />;
     }
-    renderSuccessStatus = () => {
+   /* renderSuccessStatus = () => {
         if(this.state.signupToLoginStatus){
             return <SuccessStatus text={this.state.signupToLoginStatus}/>
         }; 
@@ -91,7 +91,7 @@ class Login extends Component{
    handleSignupPress = () => {
         this.props.navigation.navigate('Signup'); 
         console.log("Sign up pressed"); 
-    }
+    }*/
 
     convertToUpperCase = (label) => {
         return label.toUpperCase(); 
@@ -118,12 +118,7 @@ class Login extends Component{
                     text={this.state.error} 
                 />
 
-                {this.renderSuccessStatus()}
                 {this.renderButtonOrSpinner()}
-
-                <LinkTouch
-                    text="No account? Signup" onPress={this.handleSignupPress}
-                />
  
             </Container>            
         );

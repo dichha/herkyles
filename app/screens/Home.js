@@ -55,6 +55,7 @@ class Home extends Component{
             buttonLink = dataSnapshot.val();
         })
     }
+    
     render(){
         return (
             <Container>
@@ -74,7 +75,7 @@ class Home extends Component{
                     onPress={this.handleCodeScannerPress}
                 />
                 <LinkBtns
-                    text="Login"
+                    text="Admin Login"
                     onPress={this.handleLoginPress}
                 />
             </Container>

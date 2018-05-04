@@ -5,6 +5,7 @@ import {Container} from "../components/Container";
 import {firebaseApp} from "../../db/DbConfig"; 
 import {LinkBtns} from "../components/Buttons/LinkBtns"; 
 import {LinkTouch} from '../components/Buttons/LinkTouch';
+import SuccessStatus from '../components/Status/SuccessStatus';
 
 class Welcome extends Component{
     static navigationOptions = {
@@ -19,11 +20,25 @@ class Welcome extends Component{
         super(props);
         this.state = { userEmail: ""};
         this._getUserEmail();
+        this._getStatus();
     }
     handleRecOptionPress = () => {
+        {this._removeSignupToWelcomeStatus()};
         this.props.navigation.navigate("RecOptions"); 
         console.log("RecOption Press"); 
     }
+    _getStatus = async () =>{
+        try{
+            let status = await AsyncStorage.getItem('signupToWelcome');
+            console.log("status in login: " + status);
+            this.setState({signupToWelcomeStatus: status});
+            console.log("status from state: "+ this.state.signupToWelcomeStatus);
+            
+        }catch(e){
+            console.log(e);
+        }
+    }; 
+
 
     _getUserEmail = async () => {
         try{
@@ -36,6 +51,13 @@ class Welcome extends Component{
             console.log(e);
         }
     }
+
+    handleSignupPress = () => {
+        {this._removeSignupToWelcomeStatus()};
+        this.props.navigation.navigate('Signup'); 
+        console.log("Sign up pressed"); 
+    } 
+
     handleLogout = async () => {
         try{
             await firebaseApp.auth().signOut();
@@ -48,10 +70,23 @@ class Welcome extends Component{
             console.log("userEmail after clearing: " + userEmail);
             
             this.props.navigation.navigate("App");
+
+            {this._removeSignupToWelcomeStatus()};
+
         }catch(e){
             console.log(e);
         }
     }
+
+    renderSuccessStatus = () => {
+        if(this.state.signupToWelcomeStatus){
+            return <SuccessStatus text={this.state.signupToWelcomeStatus}/>
+        };
+    }
+
+    _removeSignupToWelcomeStatus = async () => {
+        await AsyncStorage.removeItem('signupToWelcome'); 
+    }; 
 
     render(){
         return (
@@ -59,15 +94,23 @@ class Welcome extends Component{
                     <StatusBar transclucent={false} barStyle="light-content"/>
                     <Text>Welcome Admin</Text>
                 
-                    <Text> Hello {this.state.userEmail}</Text>
+                    <Text> {'\n'}Hello {this.state.userEmail}{'\n'}</Text>
                     {console.log("userEmail in render: " + this.state.userEmail)}
                     <LinkBtns
-                    text="Manage Equipments"
+                    text="Manage Equipment"
                     onPress={this.handleRecOptionPress}
                     />
+                    <LinkBtns
+                        text="Create New Admin Account"
+                        onPress={this.handleSignupPress}
+                    />
                     <LinkTouch 
-                    text="Logout"
-                    onPress={this.handleLogout} />
+                        text="Logout"
+                        onPress={this.handleLogout}
+                    />
+
+                    {this.renderSuccessStatus()}
+
                 </Container>            
         );
     }
