@@ -73,7 +73,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: 
           name: Signing Into Expo
-          command: yarn run exp login --username ndsmith --password ad4jkj2hd
+          command: yarn run exp login --username ndsmith --password herkyles
       - run:
           name: Deploying to Expo
           command: yarn run exp publish
