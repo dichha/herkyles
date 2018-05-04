@@ -74,20 +74,22 @@ class CodeScanner extends Component {
   render() {
     return (
       <View style={styles.container}>
-
+        <Text style={{textAlign: 'center', fontSize: 15}}>{'Some machines have a QR code located on it. \n Scan the code using the scanner below to receive more information about the machine.\n\n\n\n'}</Text>
         {this.state.hasCameraPermission === null
           ? <Text>Requesting for camera permission</Text>
           : this.state.hasCameraPermission === false
               ? <Text style={{ color: '#fff' }}>
                   Camera permission is not granted
                 </Text>
-              : <BarCodeScanner
-                  onBarCodeRead={this.handleBarCodeRead}
-                  style={{
-                    height: 200,
-                    width: 200,
-                  }}
-                />}
+              : <View style={{height: 205, width:205, backgroundColor: 'black',alignItems: 'center', justifyContent: 'center',}}> 
+                  <BarCodeScanner
+                    onBarCodeRead={this.handleBarCodeRead}
+                    style={{
+                      height: 200,
+                      width: 200,
+                    }}
+                  />
+                </View>}
 
         {this.handlePressUrl()}
 
