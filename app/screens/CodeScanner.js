@@ -38,7 +38,7 @@ class CodeScanner extends Component {
   };
 
   handleBarCodeRead = result => {
-    if (result.data !== this.state.lastScannedUrl) {
+    if (result.data !== this.state.lastScannedUrl && this.state.lastScannedUrl == null) {
       LayoutAnimation.spring();
       this.setState({ lastScannedUrl: result.data });
     }    
